@@ -397,9 +397,16 @@ namespace SpeechExcel
                 this.micClient.EndMicAndRecognition();
                 this.WriteResponseResult(e);
                 _startbutton.IsEnabled = true;
+                if (e.PhraseResponse.RecognitionStatus == Microsoft.CognitiveServices.SpeechRecognition.RecognitionStatus.InitialSilenceTimeout)
+                {
+                    this.SpeakPartialContent = "未检测到麦克风，请确认麦克风正常后再使用。";
+                }
+                else
+                {
+                    Luis luis = new Luis();
+                    luis.predict(e.PhraseResponse.Results[0].DisplayText);
+                }
                 
-                Luis luis = new Luis();
-                luis.predict(e.PhraseResponse.Results[0].DisplayText);
                 ButtonStatus = "CLICK";
             }));
         }
