@@ -13,14 +13,19 @@ namespace SpeechExcel.Execute
         /// <summary>
         /// Property intent: Pivot
         /// </summary>
-        public static Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>> intentExe = 
+        public static Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>> intentExe =
             new Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>>()
-        {
-            //TODO: 添加你的意图函数集映射(intent => function set)
-            { "PivotCreate", Pivot.CreatePivot }, { "AddColumnToPivot", Pivot.AddColumn }, { "ModiFunc", Pivot.ChangeFunc },
-                { "Find_Min_Max", SheetOpe.find_min_max }, { "Get_Value", SheetOpe.get_value }, { "Sort", SheetOpe.sort },
-                {"Filter",SheetOpe.filter }, {"CancelFilter",SheetOpe.cancelFilter }
-        };
+            {
+                //TODO: 添加你的意图函数集映射(intent => function set)
+                { "PivotCreate", Pivot.CreatePivot },
+                { "AddColumnToPivot", Pivot.AddColumn },
+                { "ModiFunc", Pivot.ChangeFunc },
+                { "Find_Min_Max", SheetOpe.find_min_max },
+                { "Get_Value", SheetOpe.get_value },
+                { "Sort", SheetOpe.sort },
+                { "Filter",SheetOpe.filter },
+                { "CancelFilter",SheetOpe.cancelFilter }
+            };
         
         /// <summary>
         /// 根据意图调用相应的函数
@@ -31,7 +36,6 @@ namespace SpeechExcel.Execute
         {
             try
             {
-                MessageBox.Show("haha");
                 intentExe[res.Intents[0].Name](res, replace_list);
             }
             catch
