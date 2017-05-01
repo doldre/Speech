@@ -13,6 +13,7 @@ namespace SpeechExcel.Execute
             //get { return "37b0dffd-5511-4975-bd9d-b4d2530b5bc0"; } // my excel
         }
 
+
         /// <summary>
         /// Gets the LUIS subscription identifier.
         /// </summary>
