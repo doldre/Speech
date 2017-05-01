@@ -9,8 +9,8 @@ namespace SpeechExcel.Execute
         private string LuisAppId
         {
             //get { return "00562bbb-2a3a-4e36-afa9-ccb398c7a103"; } // word
-            //get { return "1284fc06-1d2a-4dad-a49d-0aa0086af56c"; } // yang
-            get { return "37b0dffd-5511-4975-bd9d-b4d2530b5bc0"; } // my excel
+            get { return "1284fc06-1d2a-4dad-a49d-0aa0086af56c"; } // yang
+            //get { return "37b0dffd-5511-4975-bd9d-b4d2530b5bc0"; } // my excel
         }
 
         /// <summary>
