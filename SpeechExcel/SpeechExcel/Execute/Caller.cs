@@ -17,14 +17,14 @@ namespace SpeechExcel.Execute
             new Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>>()
             {
                 //TODO: 添加你的意图函数集映射(intent => function set)
-                { "PivotCreate", Pivot.CreatePivot },   // 创建透视图，可指定选中列
-                { "AddColumnToPivot", Pivot.AddColumn },    // 向透视表中添加列，可指定区域
-                { "ModiFunc", Pivot.ChangeFunc },   // 修改透视表统计函数
-                { "Find_Min_Max", SheetOpe.find_min_max },  // 最值
-                { "Get_Value", SheetOpe.get_value },    // 查找
-                { "Sort", SheetOpe.sort },  // 排序
-                { "Filter",SheetOpe.filter },   // 过滤，筛选数据
-                { "CancelFilter",SheetOpe.cancelFilter }    // 取消筛选
+                { "PivotCreate", Pivot.CreatePivot },
+                { "AddColumnToPivot", Pivot.AddColumn },
+                { "ModiFunc", Pivot.ChangeFunc },
+                { "Find_Min_Max", SheetOpe.find_min_max },
+                { "Get_Value", SheetOpe.get_value },
+                { "Sort", SheetOpe.sort },
+                { "Filter",SheetOpe.filter },
+                { "CancelFilter",SheetOpe.cancelFilter }
             };
         
         /// <summary>
