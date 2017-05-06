@@ -24,7 +24,8 @@ namespace SpeechExcel.Execute
                 { "Get_Value", SheetOpe.get_value },
                 { "Sort", SheetOpe.sort },
                 { "Filter",SheetOpe.filter },
-                { "CancelFilter",SheetOpe.cancelFilter }
+                { "CancelFilter",SheetOpe.cancelFilter },
+                { "OriChart", OrdinaryChart.CreateChart }
             };
         
         /// <summary>

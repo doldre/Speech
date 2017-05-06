@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using SpeechExcel.Execute;
 
 namespace SpeechExcel
@@ -397,9 +386,16 @@ namespace SpeechExcel
                 this.micClient.EndMicAndRecognition();
                 this.WriteResponseResult(e);
                 _startbutton.IsEnabled = true;
+                if (e.PhraseResponse.RecognitionStatus == Microsoft.CognitiveServices.SpeechRecognition.RecognitionStatus.InitialSilenceTimeout)
+                {
+                    this.SpeakPartialContent = "未检测到麦克风，请确认麦克风正常后再使用。";
+                }
+                else
+                {
+                    Luis luis = new Luis();
+                    luis.predict(e.PhraseResponse.Results[0].DisplayText);
+                }
                 
-                Luis luis = new Luis();
-                luis.predict(e.PhraseResponse.Results[0].DisplayText);
                 ButtonStatus = "CLICK";
             }));
         }
