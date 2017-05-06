@@ -216,7 +216,7 @@ namespace SpeechExcel.Execute
             {
                 int row_id = replace_list[0].Row;
                 int column_id = replace_list[1].Column;
-                MessageBox.Show("Row:" + row_id.ToString() + ", Col:" + column_id.ToString());
+                //MessageBox.Show("Row:" + row_id.ToString() + ", Col:" + column_id.ToString());
                 MessageBox.Show(_get_value(dataRange, row_id, column_id));
             }
             return;
@@ -232,6 +232,7 @@ namespace SpeechExcel.Execute
         /// <returns></returns>
         public static String _get_value(Excel.Range dataRange, int row_id, int column_id)
         {
+            ((Excel.Range)dataRange.Cells[row_id, column_id]).Activate();
             return ((Excel.Range)dataRange.Cells[row_id, column_id]).Text.ToString();
         }
 
@@ -304,7 +305,7 @@ namespace SpeechExcel.Execute
             }
             if (min_max == -1)
             {
-                MessageBox.Show("没有找到maximum或者minimum实体");
+                //MessageBox.Show("没有找到maximum或者minimum实体");
                 return;
             }
             if (replace_list.Count == 0)
@@ -332,7 +333,7 @@ namespace SpeechExcel.Execute
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
             try
             {
-                Globals.ThisAddIn.Application.ScreenUpdating = false;
+                //Globals.ThisAddIn.Application.ScreenUpdating = false;
                 dynamic t;
                 if (min_max == 0)
                 {
