@@ -152,6 +152,14 @@ namespace SpeechExcel.Execute
             }
         }
 
+        public class ReplaceNodeLengthDescend: IComparer<ReplaceNode>
+        {
+            public int Compare(ReplaceNode x, ReplaceNode y)
+            {
+                return -x.content.Length.CompareTo(y.content.Length);
+            }
+        }
+
         public class ReplaceNodeAscent : IComparer<ReplaceNode>
         {
             public int Compare(ReplaceNode x, ReplaceNode y)
@@ -194,21 +202,43 @@ namespace SpeechExcel.Execute
                     wk = new XSSFWorkbook(fs);
                 }
                 ISheet isheet = wk.GetSheet(sheet.Name);
+                List<ReplaceNode> all_cells = new List<ReplaceNode>();
                 for (int i = 0; i < isheet.LastRowNum; i++)
                 {
                     IRow row = isheet.GetRow(i);
                     for (int j = 0; j < row.LastCellNum; j++)
                     {
                         string s = row.GetCell(j).ToString();
-                        if (s.Length > 0 && speech_text.Contains(s))
-                        {
-                            int start = speech_text.IndexOf(s);
-                            int end = start + s.Length;
-                            replace_list.Add(new ReplaceNode(start, end, i + 1, j + 1, s));
-                            speech_text = speech_text.Replace(s, "[cell_content]");
-                        }
+                        all_cells.Add(new ReplaceNode(0, 0, i + 1, j + 1, s));
                     }
                 }
+                all_cells.Sort(new ReplaceNodeLengthDescend());
+                foreach (ReplaceNode cell in all_cells)
+                {
+                    string s = cell.content;
+                    if (s.Length > 0 && speech_text.Contains(s))
+                    {
+                        int start = speech_text.IndexOf(s);
+                        int end = start + s.Length;
+                        replace_list.Add(new ReplaceNode(start, end, cell.Row, cell.Column, s));
+                        speech_text = speech_text.Replace(s, "[cell_content]");
+                    }
+                }
+                //for (int i = 0; i < isheet.LastRowNum; i++)
+                //{
+                //    IRow row = isheet.GetRow(i);
+                //    for (int j = 0; j < row.LastCellNum; j++)
+                //    {
+                //        string s = row.GetCell(j).ToString();
+                //        if (s.Length > 0 && speech_text.Contains(s))
+                //        {
+                //            int start = speech_text.IndexOf(s);
+                //            int end = start + s.Length;
+                //            replace_list.Add(new ReplaceNode(start, end, i + 1, j + 1, s));
+                //            speech_text = speech_text.Replace(s, "[cell_content]");
+                //        }
+                //    }
+                //}
                 ReplaceNodeAscent sort_ascent = new ReplaceNodeAscent();
                 replace_list.Sort(sort_ascent);
                 return speech_text;
@@ -222,3 +252,4 @@ namespace SpeechExcel.Execute
 
     }
 }
+

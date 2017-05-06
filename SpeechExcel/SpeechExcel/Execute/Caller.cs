@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Windows;
 using Microsoft.Cognitive.LUIS;
 
 namespace SpeechExcel.Execute
@@ -13,8 +12,8 @@ namespace SpeechExcel.Execute
         /// <summary>
         /// Property intent: Pivot
         /// </summary>
-        public static Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>> intentExe =
-            new Dictionary<string, Action<LuisResult, List<Parser.ReplaceNode>>>()
+        public static Dictionary<string, Func<LuisResult, List<Parser.ReplaceNode>, string>> intentExe =
+            new Dictionary<string, Func<LuisResult, List<Parser.ReplaceNode>, string>>()
             {
                 //TODO: 添加你的意图函数集映射(intent => function set)
                 { "PivotCreate", Pivot.CreatePivot },
@@ -23,9 +22,10 @@ namespace SpeechExcel.Execute
                 { "Find_Min_Max", SheetOpe.find_min_max },
                 { "Get_Value", SheetOpe.get_value },
                 { "Sort", SheetOpe.sort },
-                { "Filter",SheetOpe.filter },
-                { "CancelFilter",SheetOpe.cancelFilter },
-                { "OriChart", OrdinaryChart.CreateChart }
+                { "Filter", Filter.filter },
+                { "CancelFilter", Filter.cancelFilter },
+                { "OriChart", OrdinaryChart.CreateChart },
+                { "Analysis", Other.UseTemplate }
             };
         
         /// <summary>
@@ -33,15 +33,15 @@ namespace SpeechExcel.Execute
         /// </summary>
         /// <param name="res">Luis的解析结果</param>
         /// <param name="replace_list"></param>
-        public static void CallFunc(LuisResult res, List<Parser.ReplaceNode> replace_list)
+        public static string CallFunc(LuisResult res, List<Parser.ReplaceNode> replace_list)
         {
             try
             {
-                intentExe[res.Intents[0].Name](res, replace_list);
+                return intentExe[res.Intents[0].Name](res, replace_list);
             }
             catch
             {
-                MessageBox.Show("Cannot Parse this Intent: " + res.Intents[0].Name);
+                return "Cannot Parse this Intent: " + res.Intents[0].Name;
             }
 
         }

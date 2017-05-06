@@ -9,6 +9,7 @@ namespace SpeechExcel.Execute
 {
     static class OrdinaryChart
     {
+        private static string mess;
         public static Dictionary<string, Excel.XlChartType> chartMap = new Dictionary<string, Excel.XlChartType>()
         {
             { "3Dcolumn", Excel.XlChartType.xl3DColumn },
@@ -21,8 +22,9 @@ namespace SpeechExcel.Execute
         /// </summary>
         /// <param name="res"></param>
         /// <param name="dataList"></param>
-        public static void CreateChart(LuisResult res, List<Parser.ReplaceNode> dataList)
+        public static string CreateChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
+            mess = "";
             Excel.XlChartType chartType = Excel.XlChartType.xlColumnStacked;
             string rangeBlock = "", selectType = "column";
             // 使用[col]和[col]的数据绘制成（[charType]）
@@ -62,15 +64,16 @@ namespace SpeechExcel.Execute
             
             if (rangeBlock == "")
             {
-                MessageBox.Show("Sorry, I cannot substract any data range to plot a chart.");
-                return;
+                return "Sorry, I cannot substract any data range to plot a chart.";
             }
             // plot chart
             createChart(selectType, rangeBlock.Substring(0, rangeBlock.Length - 1), chartType);
+            return mess;
         }
 
-        public static void ModifyChart(LuisResult res, List<Parser.ReplaceNode> dataList)
+        public static string ModifyChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
+            mess = "";
             Excel.XlChartType chartType = Excel.XlChartType.xlColumnStacked;
             // 使用[col]和[col]的数据绘制成（[charType]）
             foreach (Entity item in res.GetAllEntities())
@@ -84,6 +87,7 @@ namespace SpeechExcel.Execute
             Excel.Workbook curWorkbook = Globals.ThisAddIn.Application.ActiveWorkbook;
             // replace slection chart with a new chart type
             modifyChart(curWorkbook.ActiveChart, chartType);
+            return mess;
         }
 
         /// <summary>
@@ -114,7 +118,8 @@ namespace SpeechExcel.Execute
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error: " + e.ToString());
+                //MessageBox.Show("Error: " + e.ToString());
+                mess = "Error:" + e.ToString();
             }
             finally
             {
@@ -139,7 +144,8 @@ namespace SpeechExcel.Execute
             }
             catch
             {
-                MessageBox.Show("请选择你要修改的图表！");
+                //MessageBox.Show("请选择你要修改的图表！");
+                mess = "请选择你要修改的图表！";
             }
             finally
             {

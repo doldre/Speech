@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Cognitive.LUIS;
 using System.Windows;
+using System;
 
 namespace SpeechExcel.Execute
 {
@@ -24,25 +25,32 @@ namespace SpeechExcel.Execute
             get { return "2f8b5ad36e6e44a2889702101e5e26bf"; }
         }
 
-        public async void predict(string text)
+        public async void predict(string text, SpeechUserControl UI)
         {
+            List<Parser.ReplaceNode> replace_list = null;
+            string replaced_text = text;
             try
             {
-                List<Parser.ReplaceNode> replace_list;
-                string replaced_text = Parser.replace(text, out replace_list);
-                LuisClient client = new LuisClient(LuisAppId, LuisSubscriptionID);
-                LuisResult res = await client.Predict(replaced_text);
-                processRes(res, replace_list);
+                replaced_text = Parser.replace(text, out replace_list);
             }
-            catch (System.Exception e)
+            finally
             {
-                MessageBox.Show("Some Error has happend at Luis.cs");
+                try
+                {
+                    LuisClient client = new LuisClient(LuisAppId, LuisSubscriptionID);
+                    LuisResult res = await client.Predict(replaced_text);
+                    UI.MessageShow = processRes(res, replace_list);
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("Some Error has happend at luis.cs: " + e.ToString());
+                }
             }
         }
 
-        public void processRes(LuisResult res, List<Parser.ReplaceNode> replace_list)
+        public string processRes(LuisResult res, List<Parser.ReplaceNode> replace_list)
         {
-            Caller.CallFunc(res, replace_list);
+            return Caller.CallFunc(res, replace_list);
         }
     }
 }
