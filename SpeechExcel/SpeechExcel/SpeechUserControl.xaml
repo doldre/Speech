@@ -6,6 +6,12 @@
              xmlns:local="clr-namespace:SpeechExcel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DoubleAnimation x:Name="startWid" x:Key="StartAnimation1" Storyboard.TargetName="_startbutton"
+                                             Storyboard.TargetProperty="Width" From="70" To="60" Duration="0:0:0.5"/>
+        <DoubleAnimation x:Name="startHei" x:Key="StartAnimation2" Storyboard.TargetName="_startbutton"
+                                             Storyboard.TargetProperty="Height" From="70" To="60" Duration="0:0:0.5"/>
+    </UserControl.Resources>
     <Grid Background="White">
         <Ellipse x:Name="_startbutton_wrap" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
             <Ellipse.Fill>
@@ -28,7 +34,7 @@
         <Button x:Name="_startbutton" FontFamily="微软雅黑" FontWeight="Bold" FontSize="20" 
                 Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="90" Click="StartButton_Click" Content="{Binding ButtonStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
+                <ControlTemplate x:Name="buttontemp" TargetType="{x:Type Button}">
                     <Border x:Name="ButtonBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="45">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -56,6 +62,20 @@
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
+                        <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UIElement}}}" Value="false">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <StaticResource ResourceKey="StartAnimation1"/>
+                                        <StaticResource ResourceKey="StartAnimation2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <RemoveStoryboard BeginStoryboardName="startWid"/>
+                                <RemoveStoryboard BeginStoryboardName="startHei"/>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
@@ -66,6 +86,7 @@
                             <Setter Property="Width" Value="90"/>
                             <Setter Property="Height" Value="90"/>
                         </Trigger>
+
                     </Style.Triggers>
                 </Style>
             </Button.Style>
@@ -86,7 +107,6 @@
                 </EventTrigger>
             </ButtonBase.Triggers>-->
         </Button>
-        <!--<TextBlock x:Name="textBlock" FontFamily="微软雅黑" FontSize="14" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="60,330,30,0" TextWrapping="Wrap" Text="Click the Start button, then speak what you want..." VerticalAlignment="Top"/>-->
         <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="0,500,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
