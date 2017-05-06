@@ -215,8 +215,14 @@ namespace SpeechExcel.Execute
             string ret = "";
             if (replace_list.Count == 2)
             {
+                HashSet<string> types = new HashSet<string>();
+                types.Add(replace_list[0].content);
+                cancelFilter();
+                TypeFilter(replace_list[0].Column, types);
                 int row_id = replace_list[0].Row;
                 int column_id = replace_list[1].Column;
+                //MessageBox.Show(replace_list[0].content);
+                //MessageBox.Show(column_id.ToString());
                 //MessageBox.Show("Row:" + row_id.ToString() + ", Col:" + column_id.ToString());
                 ret = _get_value(dataRange, row_id, column_id);
             }
@@ -320,6 +326,10 @@ namespace SpeechExcel.Execute
             {
                 int column_id = replace_list[0].Column;
                 ret = _find_min_max(dataRange, column_id, min_max);
+                HashSet<string> filter_content = new HashSet<string>();
+                filter_content.Add(ret);
+                cancelFilter();
+                TypeFilter(column_id, filter_content);
             }
             return ret;
         }
