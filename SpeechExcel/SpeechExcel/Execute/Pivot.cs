@@ -8,6 +8,7 @@ namespace SpeechExcel.Execute
 {
     class Pivot
     {
+        public static string mess = "";
         /// <summary>
         /// 图标名称和chartype的映射
         /// </summary>
@@ -22,9 +23,9 @@ namespace SpeechExcel.Execute
         /// 创建透视图表
         /// </summary>
         /// <param name="entities"></param>
-        public static void CreatePivot(LuisResult res, List<Parser.ReplaceNode> dataList)
+        public static string CreatePivot(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
-
+            mess = "";
             Excel.XlChartType chartType = Excel.XlChartType.xlColumnStacked;
             List<int> colIdxes = new List<int>();
             bool state = false;
@@ -42,8 +43,7 @@ namespace SpeechExcel.Execute
             }
             if (!state)
             {
-                MessageBox.Show("Sorry, I do not know what you wanna do.");
-                return;
+                return "Sorry, I do not know what you wanna do.";
             }
 
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
@@ -57,6 +57,7 @@ namespace SpeechExcel.Execute
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = oldFresh;
             }
+            return mess;
         }
 
         /// <summary>
@@ -64,8 +65,9 @@ namespace SpeechExcel.Execute
         /// </summary>
         /// <param name="res"></param>
         /// <param name="dataList"></param>
-        public static void AddColumn(LuisResult res, List<Parser.ReplaceNode> dataList)
+        public static string AddColumn(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
+            mess = "";
             // firstly, check table type whether pivot
             List<int> colIdxes = new List<int>();
             bool state = false;
@@ -76,8 +78,7 @@ namespace SpeechExcel.Execute
             }
             if (!state || colIdxes.Count < 1)
             {
-                MessageBox.Show("Cannot add any column!");
-                return;
+                return "Cannot add any column!";
             }
 
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
@@ -90,6 +91,7 @@ namespace SpeechExcel.Execute
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = oldFresh;
             }
+            return mess;
             
         }
 
@@ -98,10 +100,10 @@ namespace SpeechExcel.Execute
         /// </summary>
         /// <param name="entities"></param>
         /// <param name="queryText"></param>
-        public static void ChangeFunc(LuisResult res, List<Parser.ReplaceNode> dataList)
+        public static string ChangeFunc(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             // 将[col]的统计方式[modify]{成}[functionName]
-            MessageBox.Show("Happy for modify Pivot function!");
+            return "Happy for modify Pivot function!";
         }
 
         public static string ConvertColName(List<int> idxes)
