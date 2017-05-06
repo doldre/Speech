@@ -77,5 +77,14 @@ namespace SpeechExcel.Properties {
                 return ResourceManager.GetString("tips", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 抱歉，我不懂你的意图 的本地化字符串。
+        /// </summary>
+        internal static string unkown {
+            get {
+                return ResourceManager.GetString("unkown", resourceCulture);
+            }
+        }
     }
 }

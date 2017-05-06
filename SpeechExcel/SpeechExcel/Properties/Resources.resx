@@ -123,4 +123,7 @@
   <data name="tips" xml:space="preserve">
     <value>Please speak your order...</value>
   </data>
+  <data name="unkown" xml:space="preserve">
+    <value>抱歉，我不懂你的意图</value>
+  </data>
 </root>
