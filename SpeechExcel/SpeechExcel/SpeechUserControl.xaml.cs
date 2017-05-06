@@ -311,6 +311,7 @@ namespace SpeechExcel
         {
             // 禁用按钮，防止事件冲突
             this._startbutton.IsEnabled = false;
+            this.MessageShow = "";
             ButtonStatus = "WAIT";
 
             if (this.UseMicrophone)
