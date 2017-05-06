@@ -217,8 +217,8 @@ namespace SpeechExcel.Execute
             {
                 HashSet<string> types = new HashSet<string>();
                 types.Add(replace_list[0].content);
-                cancelFilter();
-                TypeFilter(replace_list[0].Column, types);
+                //cancelFilter();
+                //TypeFilter(replace_list[0].Column, types);
                 int row_id = replace_list[0].Row;
                 int column_id = replace_list[1].Column;
                 //MessageBox.Show(replace_list[0].content);
@@ -328,8 +328,8 @@ namespace SpeechExcel.Execute
                 ret = _find_min_max(dataRange, column_id, min_max);
                 HashSet<string> filter_content = new HashSet<string>();
                 filter_content.Add(ret);
-                cancelFilter();
-                TypeFilter(column_id, filter_content);
+                //cancelFilter();
+                //TypeFilter(column_id, filter_content);
             }
             return ret;
         }
