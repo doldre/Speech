@@ -23,8 +23,8 @@ namespace SpeechExcel.Execute
                 { "Find_Min_Max", SheetOpe.find_min_max },
                 { "Get_Value", SheetOpe.get_value },
                 { "Sort", SheetOpe.sort },
-                //{ "Filter",SheetOpe.filter },
-                //{ "CancelFilter",SheetOpe.cancelFilter },
+                { "Filter", Filter.filter },
+                { "CancelFilter", Filter.cancelFilter },
                 { "OriChart", OrdinaryChart.CreateChart }
             };
         
