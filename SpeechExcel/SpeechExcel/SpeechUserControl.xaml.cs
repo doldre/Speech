@@ -38,6 +38,11 @@ namespace SpeechExcel
         private string speakPartialInfo;
 
         /// <summary>
+        /// Message Show in UI
+        /// </summary>
+        private string messageShow;
+
+        /// <summary>
         /// 初始化新实例：<see cref="MainWindow"/>
         /// </summary>
         public SpeechUserControl()
@@ -132,6 +137,19 @@ namespace SpeechExcel
             {
                 this.speakPartialInfo = value;
                 this.OnPropertyChanged<string>("SpeakPartialContent");
+            }
+        }
+
+        public string MessageShow
+        {
+            get
+            {
+                return this.messageShow;
+            }
+            set
+            {
+                this.messageShow = value;
+                this.OnPropertyChanged<string>("MessageShow");
             }
         }
 
@@ -317,6 +335,7 @@ namespace SpeechExcel
             {
                 // 麦克风权限获取失败
                 MessageBox.Show("麦克风权限获取失败，请检查！");
+                //this.SpeakPartialContent = ""
             }
         }
 
@@ -386,14 +405,14 @@ namespace SpeechExcel
                 this.micClient.EndMicAndRecognition();
                 this.WriteResponseResult(e);
                 _startbutton.IsEnabled = true;
-                if (e.PhraseResponse.RecognitionStatus == Microsoft.CognitiveServices.SpeechRecognition.RecognitionStatus.InitialSilenceTimeout)
+                if (e.PhraseResponse.RecognitionStatus == RecognitionStatus.InitialSilenceTimeout)
                 {
-                    this.SpeakPartialContent = "未检测到麦克风，请确认麦克风正常后再使用。";
+                    this.SpeakPartialContent = Properties.Resources.detect_warning;
                 }
                 else
                 {
                     Luis luis = new Luis();
-                    luis.predict(e.PhraseResponse.Results[0].DisplayText);
+                    luis.predict(e.PhraseResponse.Results[0].DisplayText, this);
                 }
                 
                 ButtonStatus = "CLICK";
@@ -515,7 +534,7 @@ namespace SpeechExcel
             {
                 if (e.Recording)
                 {
-                    this.SpeakPartialContent = "Please start speaking....";
+                    this.SpeakPartialContent = Properties.Resources.tips;
                 }
             });
         }
