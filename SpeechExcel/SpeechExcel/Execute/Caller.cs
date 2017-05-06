@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Windows;
 using Microsoft.Cognitive.LUIS;
 
 namespace SpeechExcel.Execute
@@ -25,7 +24,8 @@ namespace SpeechExcel.Execute
                 { "Sort", SheetOpe.sort },
                 { "Filter", Filter.filter },
                 { "CancelFilter", Filter.cancelFilter },
-                { "OriChart", OrdinaryChart.CreateChart }
+                { "OriChart", OrdinaryChart.CreateChart },
+                { "Analysis", Other.UseTemplate }
             };
         
         /// <summary>

@@ -70,7 +70,6 @@ C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.dll
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OOXML.dll
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OpenXml4Net.dll
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OpenXmlFormats.dll
-C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\SpeechClient.dll
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Newtonsoft.Json.xml
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.xml
 C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.csprojResolveAssemblyReference.cache
@@ -145,3 +144,4 @@ C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\obj\Debug\Speec
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.csproj.GenerateResource.Cache
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.dll
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.pdb
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\SpeechClient.dll

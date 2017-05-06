@@ -121,7 +121,7 @@
     <value>未检测到麦克风，请确认麦克风正常后再使用。</value>
   </data>
   <data name="tips" xml:space="preserve">
-    <value>Please speak your order...</value>
+    <value>有何吩咐？</value>
   </data>
   <data name="unkown" xml:space="preserve">
     <value>抱歉，我不懂你的意图</value>
