@@ -28,7 +28,6 @@ namespace SpeechExcel.Execute
         {
             try
             {
-                MessageBox.Show("Hhaha");
                 List<Parser.ReplaceNode> replace_list;
                 string replaced_text = Parser.replace(text, out replace_list);
                 LuisClient client = new LuisClient(LuisAppId, LuisSubscriptionID);
