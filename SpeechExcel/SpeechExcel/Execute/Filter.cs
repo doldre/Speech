@@ -14,9 +14,10 @@ namespace SpeechExcel.Execute
         /// </summary>
         /// <param name="entities"></param>
         /// <param name="queryText"></param>
-        public static void cancelFilter(LuisResult res, List<Parser.ReplaceNode> replace_list)
+        public static string cancelFilter(LuisResult res, List<Parser.ReplaceNode> replace_list)
         {
             cancelFilter();
+            return "";
         }
 
         /// <summary>
