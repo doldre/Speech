@@ -72,6 +72,6 @@
         </Button>
         <!--<TextBlock x:Name="textBlock" FontFamily="微软雅黑" FontSize="14" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="60,330,30,0" TextWrapping="Wrap" Text="Click the Start button, then speak what you want..." VerticalAlignment="Top"/>-->
         <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" />
-        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250"/>
+        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250"/>
     </Grid>
 </UserControl>

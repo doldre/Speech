@@ -8,9 +8,9 @@ namespace SpeechExcel.Execute
 {
     static class Other
     {
-        private static Excel.Workbook workbook;
-        private static Excel.Worksheet sheet;
-        private static Excel.Worksheet curSheet;
+        private static Excel.Workbook workbook;     // current workbook object
+        private static Excel.Worksheet sheet;       // sheet which offers original data
+        private static Excel.Worksheet curSheet;    // current pivot sheet, must be selected
 
         private static string mss;
 
@@ -27,6 +27,12 @@ namespace SpeechExcel.Execute
             public PivotData(int type, object name, int add_in = 4) { this.type = type; this.name = name; this.add_in = add_in; }
         }
 
+        /// <summary>
+        /// Call analysis template 
+        /// </summary>
+        /// <param name="res">luis parsing result</param>
+        /// <param name="dataList">replaced datalist</param>
+        /// <returns></returns>
         public static string UseTemplate(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             mss = "";
@@ -51,39 +57,46 @@ namespace SpeechExcel.Execute
                 curSheet.Select();
                 Excel.Range headingBar = curSheet.Range["A22:D22"];
 
+                string title1 = "年度开支对比";
+                string title2 = "2016-2017年开支占比";
+                string title3 = "每月开支趋势";
+                string headTitle = "开支报表概览";
+
                 // part1: 年度开支对比
                 // setting heading
-                string title = "年度开支对比";
-                createHead(headingBar, title);
+                createHead(headingBar, title1);
                 // setting table
-                createPivotTable(1, curSheet, curSheet.Range["A23"], title,
+                createPivotTable(1, curSheet, curSheet.Range["A23"], title1,
                     curSheet.Range["A5"], curSheet.Range["G21"], sheet.UsedRange, Excel.XlChartType.xlColumnClustered, 11);
                 // setting fields
                 List<PivotData> fields = new List<PivotData>() { new PivotData(1, "日期", 6), new PivotData(0, "类别"), new PivotData(2, "实际成本") };
                 addField(workbook.ActiveChart.PivotLayout.PivotTable, fields);
+
                 // part2: 年度开支分类占比
                 headingBar = curSheet.Range["H22:M22"];
-                title = "2016-2017年开支分类占比";
-                createHead(headingBar, title);
-                createPivotTable(2, curSheet, curSheet.Range["H23"], title,
+                createHead(headingBar, title2);
+                createPivotTable(2, curSheet, curSheet.Range["H23"], title2,
                     curSheet.Range["H5"], curSheet.Range["O21"], sheet.UsedRange, Excel.XlChartType.xlPieOfPie, 6);
                 List<PivotData> fields2 = new List<PivotData>() { new PivotData(1, "日期"), new PivotData(0, "类别"), new PivotData(2, "实际成本") };
                 addField(workbook.ActiveChart.PivotLayout.PivotTable, fields2);
+
                 // part3: 每月开支趋势图
                 headingBar = curSheet.Range["P22:Q22"];
-                title = "每月开支趋势";
-                createHead(headingBar, "每月开支趋势");
-                createPivotTable(3, curSheet, curSheet.Range["P23"], title,
+                createHead(headingBar, title3);
+                createPivotTable(3, curSheet, curSheet.Range["P23"], title3,
                     curSheet.Range["P5"], curSheet.Range["W21"], sheet.UsedRange, Excel.XlChartType.xlColumnClustered, 11);
                 List<PivotData> fields3 = new List<PivotData>() { new PivotData(0, "日期"), new PivotData(2, "实际成本") };
                 addField(workbook.ActiveChart.PivotLayout.PivotTable, fields3);
+
                 // setting sheet's heading
                 headingBar = curSheet.Range["A1:V3"];
-                createHead(headingBar, "2016-2017年度开支报表概览", 13.5, fontSize: 18);
+                createHead(headingBar, headTitle, 13.5, fontSize: 18);
+                // hidden pivot table field list bar
+                //workbook.ShowPivotTableFieldList = false;
             }
             catch
             {
-                mss = "在使用报表分析功能时出错，请确定原表中具有：类别，实际成本和时间";
+                mss = "在使用报表分析功能时出错，请确定原表中具有：{类别}，{实际成本}和{时间}";
             }
             finally
             {
@@ -110,7 +123,7 @@ namespace SpeechExcel.Execute
             headingBar.RowHeight = height;
             headingBar.Font.Size = fontSize;
             headingBar.Font.FontStyle = "Microsoft YaHei UI";
-            headingBar.Select();
+            //headingBar.Select();
             headingBar.FormulaR1C1 = headingText;
         }
 
@@ -129,8 +142,10 @@ namespace SpeechExcel.Execute
         {
             Excel.PivotTable table = workbook.PivotCaches().Create(SourceType: Excel.XlPivotTableSourceType.xlDatabase,
                 SourceData: source, Version: 6).CreatePivotTable(TableDestination: topLeft, TableName: title, DefaultVersion: 6);
+            // 设定表格样式为条纹样式
+            table.ShowTableStyleRowStripes = true;
             // create pivot chart, and set its position and its size
-            createPivotChart(idx, curSheet, chartTopLeft, bottomRight, table.DataBodyRange, charType, title, layOutParam);
+            createPivotChart(idx, chartTopLeft, bottomRight, table.DataBodyRange, charType, title, layOutParam);
         }
 
         /// <summary>
@@ -173,7 +188,7 @@ namespace SpeechExcel.Execute
             //table.PivotCache().Refresh();
         }
 
-        public static void createPivotChart(int idx, Excel.Worksheet curSheet, Excel.Range topLeft, Excel.Range bottomRight, Excel.Range source, Excel.XlChartType charType, string chartName, int layOutParam)
+        public static void createPivotChart(int idx, Excel.Range topLeft, Excel.Range bottomRight, Excel.Range source, Excel.XlChartType charType, string chartName, int layOutParam)
         {
             curSheet.Shapes.AddChart2(201, charType).Select();
             workbook.ActiveChart.ChartTitle.Text = chartName;

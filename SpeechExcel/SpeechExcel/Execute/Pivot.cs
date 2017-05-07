@@ -9,8 +9,22 @@ namespace SpeechExcel.Execute
     class Pivot
     {
         public static string mess = "";
+
+        public struct PivotData
+        {
+            public int type;   // type == 0: row, type == 1: column, type == 2: data
+            public object name;    // string or int
+            public int add_in;
+            /// <summary>
+            /// Pivot Construct
+            /// </summary>
+            /// <param name="type">field's type, 0: row, 1: column, 2: data</param>
+            /// <param name="name">field's name</param>
+            public PivotData(int type, object name, int add_in = 4) { this.type = type; this.name = name; this.add_in = add_in; }
+        }
+
         /// <summary>
-        /// 图标名称和chartype的映射
+        /// 图表名称和chartype的映射
         /// </summary>
         public static Dictionary<string, Excel.XlChartType> chartName = new Dictionary<string, Excel.XlChartType>()
         {
@@ -106,17 +120,25 @@ namespace SpeechExcel.Execute
             return "对透视图修改了统计函数。";
         }
 
-        public static string ConvertColName(List<int> idxes)
+        public static string OriInterFace(List<int> idx, Excel.XlChartType charType)
         {
-            char iAx;
-            string ans = "";
-            for (int i = 0; i < idxes.Count; i++)
+            mess = "";
+            Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
+            try
             {
-                idxes[i] = (idxes[i] - 1) % 26;
-                iAx = (char)(65 + idxes[i]);
-                ans += iAx + ":" + iAx + ",";
+                Globals.ThisAddIn.Application.ScreenUpdating = false;
+                createPivot(charType);
+                addColumns(idx);
             }
-            return ans.Substring(0, ans.Length - 1);
+            catch
+            {
+                mess = "抱歉，由于某些原因我不能创建透视图。";
+            }
+            finally
+            {
+                Globals.ThisAddIn.Application.ScreenUpdating = oldFresh;
+            }
+            return mess;
         }
 
         /// <summary>
@@ -166,18 +188,6 @@ namespace SpeechExcel.Execute
                 table1.DataPivotField.Position = 1;
             }
             
-        }
-
-        /// <summary>
-        /// 修改某个指定的列的统计函数，eg：
-        /// </summary>
-        /// <param name="colName">列名</param>
-        /// <param name="newFunc">新的统计函数</param>
-        public static void changeAnalysis(string colName, Excel.XlConsolidationFunction newFunc = Excel.XlConsolidationFunction.xlCount)
-        {
-            Excel.PivotField field = Globals.ThisAddIn.Application.ActiveChart.PivotLayout.PivotTable.PivotFields(colName) as Excel.PivotField;
-            field.Caption = "Count: Level";
-            field.Function = newFunc;
         }
     }
 }
