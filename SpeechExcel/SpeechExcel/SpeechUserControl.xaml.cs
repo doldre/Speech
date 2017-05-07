@@ -153,6 +153,16 @@ namespace SpeechExcel
             }
         }
 
+        public Visibility ProcessStatus
+        {
+            get { return this.processAnima.Visibility; }
+            set
+            {
+                this.processAnima.Visibility = value;
+                //this.OnPropertyChanged<Visibility>("ProcessStatus");
+            }
+        }
+
         public string ButtonStatus
         {
             get
@@ -406,6 +416,8 @@ namespace SpeechExcel
                 this.micClient.EndMicAndRecognition();
                 this.WriteResponseResult(e);
                 _startbutton.IsEnabled = true;
+                if (!done) return;
+                done = false;
                 if (e.PhraseResponse.RecognitionStatus == RecognitionStatus.InitialSilenceTimeout)
                 {
                     //this.SpeakPartialContent = Properties.Resources.detect_warning;
@@ -414,6 +426,7 @@ namespace SpeechExcel
                 else
                 {
                     Luis luis = new Luis();
+                    this.ProcessStatus = Visibility.Visible;
                     luis.predict(e.PhraseResponse.Results[0].DisplayText, this);
                 }
                 
@@ -468,7 +481,7 @@ namespace SpeechExcel
         /// <summary>
         /// 作为动作结束的标志
         /// </summary>
-        private bool done;
+        public bool done;
 
 
         /// <summary>

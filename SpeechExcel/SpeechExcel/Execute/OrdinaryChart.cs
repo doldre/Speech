@@ -12,7 +12,7 @@ namespace SpeechExcel.Execute
         private static string mess;
         public static Dictionary<string, Excel.XlChartType> chartMap = new Dictionary<string, Excel.XlChartType>()
         {
-            { "3Dcolumn", Excel.XlChartType.xl3DColumn },
+            { "3Dcolumn", Excel.XlChartType.xlColumnClustered },
             { "pie", Excel.XlChartType.xlPie },
             { "line", Excel.XlChartType.xlLineMarkers }
         };
@@ -41,36 +41,51 @@ namespace SpeechExcel.Execute
                     chartType = chartMap[item.Name.Split(':')[2]];  // substract the chart type
                 }
             }
-            // check whether we find rows
-            if (rangeBlock == "")
+            // 如果绘制的是透视图，调用pivot中的OriChart接口
+            if (chartType == chartMap["pivot"])
+            {
+                List<int> idx = new List<int>();
+                foreach (var cell in dataList)
+                {
+                    if (cell.Row == 1)
+                    {
+                        // transfer to column
+                        idx.Add(cell.Column);
+                    }
+                }
+                mess = Pivot.OriInterFace(idx, chartType);
+            }
+            else if (rangeBlock == "") // 如果没有找到列，那么使用datalist给出的列
             {
                 selectType = "row";
                 foreach (var cell in dataList)
                 {
-                    if (cell.Row != 1)
+                    if (cell.Row != 1)// 如果不是行号不是1，说明这是一个筛选过程
                     {
                         // transfer to row
                         char nameRow = (char)(48 + cell.Row);
                         rangeBlock += nameRow + ":" + nameRow + ",";
                     }
-                    else if (cell.Row == 1)
+                    else if (cell.Row == 1)//如果行号是1，说明这是一个列
                     {
                         // transfer to column
                         char nameCol = (char)(64 + cell.Column);
-                        rangeBlock += nameCol + ':' + nameCol + ',';
+                        rangeBlock += nameCol + ":" + nameCol + ",";
                     }
                 }
+                if (rangeBlock == "") mess = "抱歉，我不能提取到有效的数据来绘制图表。";
+                else createChart(selectType, rangeBlock.Substring(0, rangeBlock.Length - 1), chartType);
             }
-            
-            if (rangeBlock == "")
-            {
-                return "Sorry, I cannot substract any data range to plot a chart.";
-            }
-            // plot chart
-            createChart(selectType, rangeBlock.Substring(0, rangeBlock.Length - 1), chartType);
+
             return mess;
         }
 
+        /// <summary>
+        /// Modify Current Chart to another chart
+        /// </summary>
+        /// <param name="res"></param>
+        /// <param name="dataList"></param>
+        /// <returns></returns>
         public static string ModifyChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             mess = "";
@@ -114,12 +129,11 @@ namespace SpeechExcel.Execute
                 workbook.ActiveChart.SetSourceData(Source: curSheet.UsedRange.Range[rangeBlock], PlotBy: plotby);
                 curSheet.Shapes.Item(1).ScaleWidth(1.4f, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoScaleFrom.msoScaleFromTopLeft);
                 curSheet.Shapes.Item(1).ScaleHeight(1.6f, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoScaleFrom.msoScaleFromTopLeft);
-
             }
             catch (Exception e)
             {
                 //MessageBox.Show("Error: " + e.ToString());
-                mess = "Error:" + e.ToString();
+                MessageBox.Show("error at Orichart: " + e.ToString());
             }
             finally
             {

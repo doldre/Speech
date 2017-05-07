@@ -5,9 +5,144 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpeechExcel"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="White" Margin="0,0,0,34">
-        <Ellipse x:Name="_startbutton_wrap" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
+             d:DesignHeight="500" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" RepeatBehavior="Forever" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse1">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.1000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse2">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse3">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.3000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse4">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.9000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse5">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.5000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse6">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.1000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse7">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.7000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse8">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.3000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.8000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse9">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.9000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse10">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.1000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.5000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse11">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.1000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse12">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.3000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.7000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.2000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse13">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.8000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.3000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse14">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.5000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.9000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.4000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse15">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.5000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse16">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.7000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.1000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.6000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" Storyboard.TargetName="ellipse17">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:01.8000000" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.2000000" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:02.7000000" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Grid Background="White">
+        <Ellipse x:Name="_startbutton_wrap" Width="100" Height="100" HorizontalAlignment="Center" Opacity="0.5">
             <Ellipse.Fill>
                 <SolidColorBrush x:Name="parentBrush" Color="#FF7CB9F7"></SolidColorBrush>
             </Ellipse.Fill>
@@ -26,7 +161,7 @@
             </Ellipse.Triggers>
         </Ellipse>
         <Button x:Name="_startbutton" FontFamily="微软雅黑" FontWeight="Bold" FontSize="20" 
-                Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="90" Click="StartButton_Click" Content="{Binding ButtonStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,0" Width="90" Height="90" Click="StartButton_Click" Content="{Binding ButtonStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="ButtonBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="45">
@@ -71,7 +206,183 @@
             </Button.Style>
         </Button>
         <!--<TextBlock x:Name="textBlock" FontFamily="微软雅黑" FontSize="14" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="60,330,30,0" TextWrapping="Wrap" Text="Click the Start button, then speak what you want..." VerticalAlignment="Top"/>-->
-        <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="0,450,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" VerticalAlignment="Top"/>
-        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="0,530,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" VerticalAlignment="Top" />
+        <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" />
+        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250"/>
+
+        <Viewbox x:Name="processAnima" Width="8" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,450,0,0" Visibility="Hidden">
+            <Grid HorizontalAlignment="Center" x:Name="loading" Margin="0" VerticalAlignment="Center" Width="3.333" Height="3.333" Visibility="Visible">
+                <Ellipse RenderTransformOrigin="0.468,3.443" x:Name="ellipse" Fill="RoyalBlue" Stroke="{x:Null}" d:IsHidden="True" />
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse1" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="20" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse2" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="40" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse3" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="60" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse4" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="80" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse5" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="100" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse6" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="120" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse7" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="140" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse8" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="160" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse9" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="180" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse10" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="200" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse11" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="220" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse12" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="240" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse13" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="260" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse14" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="280" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse15" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="300" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse16" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="320" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin="0.468,3.443" Fill="RoyalBlue" Stroke="{x:Null}" x:Name="ellipse17" d:IsHidden="True">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <SkewTransform AngleX="0" AngleY="0" />
+                            <RotateTransform Angle="340" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Grid>
+        </Viewbox>
     </Grid>
 </UserControl>
