@@ -14,7 +14,8 @@ namespace SpeechExcel.Execute
         {
             { "3Dcolumn", Excel.XlChartType.xlColumnClustered },
             { "pie", Excel.XlChartType.xlPie },
-            { "line", Excel.XlChartType.xlLineMarkers }
+            { "line", Excel.XlChartType.xlLineMarkers },
+            { "pivot", Excel.XlChartType.xl3DArea }
         };
 
         /// <summary>
