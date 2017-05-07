@@ -26,7 +26,7 @@ namespace SpeechExcel.Execute
         public static string CreateChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             mess = "";
-            Excel.XlChartType chartType = Excel.XlChartType.xlColumnStacked;
+            Excel.XlChartType chartType = Excel.XlChartType.xl3DColumnClustered;
             string rangeBlock = "", selectType = "column";
             // 使用[col]和[col]的数据绘制成（[charType]）
             foreach (Entity item in res.GetAllEntities())
