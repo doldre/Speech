@@ -55,18 +55,18 @@ namespace SpeechExcel.Execute
                 }
                 mess = Pivot.OriInterFace(idx, chartType);
             }
-            else if (rangeBlock == "") // check whether we find rows
+            else if (rangeBlock == "") // 如果没有找到列，那么使用datalist给出的列
             {
                 selectType = "row";
                 foreach (var cell in dataList)
                 {
-                    if (cell.Row != 1)
+                    if (cell.Row != 1)// 如果不是行号不是1，说明这是一个筛选过程
                     {
                         // transfer to row
                         char nameRow = (char)(48 + cell.Row);
                         rangeBlock += nameRow + ":" + nameRow + ",";
                     }
-                    else if (cell.Row == 1)
+                    else if (cell.Row == 1)//如果行号是1，说明这是一个列
                     {
                         // transfer to column
                         char nameCol = (char)(64 + cell.Column);
