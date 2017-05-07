@@ -265,7 +265,7 @@ namespace SpeechExcel.Execute
             if(replace_list.Count == 1)
             {
                 int column_id = replace_list[0].Column;
-                rng = (Excel.Range)rng.Columns[column_id];
+                rng = (Excel.Range)dataRange.Columns[column_id];
                 ret = Globals.ThisAddIn.Application.WorksheetFunction.Subtotal(109, rng).ToString();
             }
             return ret;
@@ -387,6 +387,7 @@ namespace SpeechExcel.Execute
                     // max
                     t = Globals.ThisAddIn.Application.WorksheetFunction.Max(dataRange.Columns[column_id]);
                 }
+                //MessageBox.Show(((Excel.Range)dataRange[2, column_id]).GetType().ToString());
 
                 return t.ToString();
 
