@@ -61,6 +61,15 @@ namespace SpeechExcel.Properties {
         }
         
         /// <summary>
+        ///   查找类似 抱歉，我在解析意图的时候出了点问题 的本地化字符串。
+        /// </summary>
+        internal static string bug {
+            get {
+                return ResourceManager.GetString("bug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 未检测到麦克风，请确认麦克风正常后再使用。 的本地化字符串。
         /// </summary>
         internal static string detect_warning {
@@ -70,7 +79,7 @@ namespace SpeechExcel.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Please speak your order... 的本地化字符串。
+        ///   查找类似 有何吩咐？ 的本地化字符串。
         /// </summary>
         internal static string tips {
             get {

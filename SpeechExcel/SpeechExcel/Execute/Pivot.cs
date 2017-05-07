@@ -78,7 +78,7 @@ namespace SpeechExcel.Execute
             }
             if (!state || colIdxes.Count < 1)
             {
-                return "Cannot add any column!";
+                return "抱歉，我不能添加列。";
             }
 
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
@@ -103,7 +103,7 @@ namespace SpeechExcel.Execute
         public static string ChangeFunc(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             // 将[col]的统计方式[modify]{成}[functionName]
-            return "Happy for modify Pivot function!";
+            return "对透视图修改了统计函数。";
         }
 
         public static string ConvertColName(List<int> idxes)

@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bug" xml:space="preserve">
+    <value>抱歉，我在解析意图的时候出了点问题</value>
+  </data>
   <data name="detect_warning" xml:space="preserve">
     <value>未检测到麦克风，请确认麦克风正常后再使用。</value>
   </data>
   <data name="tips" xml:space="preserve">
-    <value>Please speak your order...</value>
+    <value>有何吩咐？</value>
   </data>
   <data name="unkown" xml:space="preserve">
     <value>抱歉，我不懂你的意图</value>

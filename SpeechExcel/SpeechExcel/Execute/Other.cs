@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Cognitive.LUIS;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -10,6 +11,8 @@ namespace SpeechExcel.Execute
         private static Excel.Workbook workbook;
         private static Excel.Worksheet sheet;
         private static Excel.Worksheet curSheet;
+
+        private static string mss;
 
         public struct PivotData
         {
@@ -24,7 +27,19 @@ namespace SpeechExcel.Execute
             public PivotData(int type, object name, int add_in = 4) { this.type = type; this.name = name; this.add_in = add_in; }
         }
 
-        public static void func_SwitchSheet(JArray entities, string queryText)
+        public static string UseTemplate(LuisResult res, List<Parser.ReplaceNode> dataList)
+        {
+            mss = "";
+            sheetTemplate();
+            return mss;
+        }
+
+        /// <summary>
+        /// 创建财报分析表
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="queryText"></param>
+        public static void sheetTemplate()
         {
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
             try
@@ -35,6 +50,7 @@ namespace SpeechExcel.Execute
                 curSheet = workbook.Worksheets.Add() as Excel.Worksheet;
                 curSheet.Select();
                 Excel.Range headingBar = curSheet.Range["A22:D22"];
+
                 // part1: 年度开支对比
                 // setting heading
                 string title = "年度开支对比";
@@ -65,15 +81,14 @@ namespace SpeechExcel.Execute
                 headingBar = curSheet.Range["A1:V3"];
                 createHead(headingBar, "2016-2017年度开支报表概览", 13.5, fontSize: 18);
             }
+            catch
+            {
+                mss = "在使用报表分析功能时出错，请确定原表中具有：类别，实际成本和时间";
+            }
             finally
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = oldFresh;
             }
-        }
-
-        public static void sheetTemplate()
-        {
-            
         }
 
         /// <summary>

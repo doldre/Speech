@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Thinktecture.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Thinktecture.AbstractionAdapter">
+            <summary>
+            Base class for all adapters.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.AbstractionAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.AbstractionAdapter.#ctor(System.Object)">
+            <summary>
+            Initializes new instance of <see cref="T:Thinktecture.AbstractionAdapter"/>.
+            </summary>
+            <param name="implementation">Implementation to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.AbstractionAdapter.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="M:Thinktecture.AbstractionAdapter.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Thinktecture.AbstractionAdapter.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Thinktecture.AbstractionEventHandlerContext`1">
+            <summary>
+            Event handler context of an abstraction.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Thinktecture.AbstractionEventHandlerContext`1.Handler">
+            <summary>
+            Event handler.
+            </summary>
+        </member>
+        <member name="P:Thinktecture.AbstractionEventHandlerContext`1.Count">
+            <summary>
+            Indication how many times the handler has been attached.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.AbstractionEventHandlerContext`1.#ctor(System.EventHandler{`0})">
+            <summary>
+            Initializes new istance of <see cref="T:Thinktecture.AbstractionEventHandlerContext`1"/>.
+            </summary>
+            <param name="handler">Event handler</param>
+        </member>
+        <member name="T:Thinktecture.AbstractionEventHandlerLookup`2">
+            <summary>
+            Allow mapping of event handlers.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.AbstractionEventHandlerLookup`2.#ctor">
+            <summary>
+            Initializes new instance of <see cref="T:Thinktecture.AbstractionEventHandlerLookup`2"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.AbstractionEventHandlerLookup`2.MapForAttachment(System.EventHandler{`0},System.Func{`1,`0})">
+            <summary>
+            Maps handler for attaching to an event.
+            </summary>
+            <param name="handler">Handler to map.</param>
+            <param name="toInterface">Function to convert an implementation to an abstraction.</param>
+            <returns>Mapped handler</returns>
+        </member>
+        <member name="M:Thinktecture.AbstractionEventHandlerLookup`2.TryMapForDetachment(System.EventHandler{`0})">
+            <summary>
+            Maps handler for detachment.
+            </summary>
+            <param name="handler">Handler to map.</param>
+            <returns>Mapped handler</returns>
+        </member>
+        <member name="T:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3">
+            <summary>
+            Adapter for collections.
+            </summary>
+            <typeparam name="TAbstractionItem">Item type of the abstraction.</typeparam>
+            <typeparam name="TImplementationItem">Item type of the implementation.</typeparam>
+            <typeparam name="TImplementation">Type of the implementation.</typeparam>
+        </member>
+        <member name="F:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Collection">
+            <summary>
+            Inner collection.
+            </summary>
+        </member>
+        <member name="P:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.#ctor(`2,System.Func{`1,`0})">
+            <summary>
+            Initializes new instance of <see cref="T:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3"/>.
+            </summary>
+            <param name="collection">Collection to be used by the adapter.</param>
+            <param name="toInterface">Converts an item of <typeparamref name="TImplementation"/> to type <typeparamref name="TAbstractionItem"/>.</param>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Add(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Add(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Contains(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Contains(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.CopyTo(`0[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.CopyTo(`1[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Remove(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.CollectionAbstractionAdapter`3.Remove(`1)">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.Collections.Generic.ICollectionAbstraction`3">
+            <summary>
+            An abstraction for collections.
+            </summary>
+            <typeparam name="TAbstractionItem">Type of the abstraction.</typeparam>
+            <typeparam name="TImplementationItem">Tzpe of the item of the implementation.</typeparam>
+            <typeparam name="TImplementation">Type of the implementation.</typeparam>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.ICollectionAbstraction`3.UnsafeConvert">
+            <summary>
+            Gets inner instance of <typeparamref name="TImplementation"/>.
+            It is not intended to be used directly. Use <see cref="M:Thinktecture.CollectionExtensions.ToImplementation``3(Thinktecture.Collections.Generic.ICollectionAbstraction{``0,``1,``2})"/> instead.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.ICollectionAbstraction`3.Add(`1)">
+            <summary>
+            Adds item to collection.
+            </summary>
+            <param name="item">Item to add.</param>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.ICollectionAbstraction`3.Contains(`1)">
+            <summary>
+            Gets an indicator whether the item is in collection or not.
+            </summary>
+            <param name="item">Item to check for.</param>
+            <returns><c>true</c> if the item is in collection; <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.ICollectionAbstraction`3.CopyTo(`1[],System.Int32)">
+            <summary>
+            Copies the collection to provided array.
+            </summary>
+            <param name="array">Array to copy into.</param>
+            <param name="arrayIndex">Index to start to insert from.</param>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.ICollectionAbstraction`3.Remove(`1)">
+            <summary>
+            Removes the item from collection.
+            </summary>
+            <param name="item">Item to remove.</param>
+            <returns><c>true</c> if the item has been removed; <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Thinktecture.Collections.Generic.InstanceEqualityComparer`1">
+            <summary>
+            Use <see cref="M:System.Object.ReferenceEquals(System.Object,System.Object)"/> for comparison.
+            </summary>
+            <typeparam name="T">Type of item to compare.</typeparam>
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.InstanceEqualityComparer`1.Equals(`0,`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.Collections.Generic.InstanceEqualityComparer`1.GetHashCode(`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.AbstractionExtensions">
+            <summary>
+            Extensions for <see cref="T:Thinktecture.IAbstraction"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.AbstractionExtensions.ToImplementation``1(Thinktecture.IAbstraction{``0})">
+            <summary>
+            Converts provided abstraction to implementation.
+            </summary>
+            <param name="abstraction">Abstraction to convert.</param>
+            <returns>Converted abstraction.</returns>
+        </member>
+        <member name="T:Thinktecture.ArrayExtensions">
+            <summary>
+            Extensions for arrays
+            </summary>
+        </member>
+        <member name="M:Thinktecture.ArrayExtensions.ToImplementation``2(``0[])">
+            <summary>
+            Copies and converts abstractions to implementations.
+            </summary>
+            <typeparam name="TAbstraction">Type of the abstraction.</typeparam>
+            <typeparam name="TImplementation">Type of the implementation.</typeparam>
+            <param name="abstractions">Array with abstractions.</param>
+            <returns>Converted array.</returns>
+        </member>
+        <member name="T:Thinktecture.CollectionExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.ICollection`1"/>
+            </summary>
+        </member>
+        <member name="M:Thinktecture.CollectionExtensions.ToImplementation``3(Thinktecture.Collections.Generic.ICollectionAbstraction{``0,``1,``2})">
+            <summary>
+            Converts a collection of type <typeparamref name="TAbstractionItem"/> to <typeparamref name="TImplementation"/>.
+            </summary>
+            <param name="collection">Collection to convert</param>
+            <typeparam name="TAbstractionItem">Type of the abstraction.</typeparam>
+            <typeparam name="TImplementationItem">Type of the item of the implementation.</typeparam>
+            <typeparam name="TImplementation">Type of the implementation.</typeparam>
+            <returns>Converted colletion.</returns>
+        </member>
+        <member name="T:Thinktecture.IAbstraction">
+            <summary>
+            Represent an abstraction.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IAbstraction.UnsafeConvert">
+            <summary>
+            Gets inner instance of the abstraction.
+            It is not intended to be used directly. Use extension method <c>ToImplementation</c> instead.
+            </summary>
+        </member>
+        <member name="T:Thinktecture.IAbstraction`1">
+            <summary>
+            Represent an abstraction.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IAbstraction`1.UnsafeConvert">
+            <summary>
+            Gets inner instance of the abstraction.
+            It is not intended to be used directly. Use extension method <c>ToImplementation</c> instead.
+            </summary>
+        </member>
+    </members>
+</doc>
