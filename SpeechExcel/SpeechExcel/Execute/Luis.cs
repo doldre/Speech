@@ -45,6 +45,11 @@ namespace SpeechExcel.Execute
                 {
                     MessageBox.Show("Some Error has happend at luis.cs: " + e.ToString());
                 }
+                finally
+                {
+                    UI.done = true;
+                    UI.ProcessStatus = Visibility.Hidden;
+                }
             }
         }
 
