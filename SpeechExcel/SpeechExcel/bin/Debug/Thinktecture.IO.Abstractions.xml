@@ -1,0 +1,2496 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Thinktecture.IO.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Thinktecture.BinaryReaderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.BinaryReader"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.BinaryReaderExtensions.ToInterface(System.IO.BinaryReader)">
+            <summary>
+            Converts provided reader to <see cref="T:Thinktecture.IO.IBinaryReader"/>.
+            </summary>
+            <param name="reader">Reader to convert.</param>
+            <returns>Converted reader.</returns>
+        </member>
+        <member name="T:Thinktecture.BinaryWriterExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.BinaryWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.BinaryWriterExtensions.ToInterface(System.IO.BinaryWriter)">
+            <summary>
+            Converts provided writer to <see cref="T:Thinktecture.IO.IBinaryWriter"/>.
+            </summary>
+            <param name="writer">Writer to convert.</param>
+            <returns>Converted writer.</returns>
+        </member>
+        <member name="T:Thinktecture.MemoryStreamExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.MemoryStream"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.MemoryStreamExtensions.ToInterface(System.IO.MemoryStream)">
+            <summary>
+            Converts provided stream to <see cref="T:Thinktecture.IO.IMemoryStream"/>;
+            </summary>
+            <param name="stream">Stream to convert.</param>
+            <returns>Converted stream.</returns>
+        </member>
+        <member name="M:Thinktecture.MemoryStreamExtensions.ToImplementation(Thinktecture.IO.IMemoryStream)">
+            <summary>
+            Converts provided <see cref="T:Thinktecture.IO.IMemoryStream"/> info to <see cref="T:System.IO.MemoryStream"/>.
+            </summary>
+            <param name="abstraction">Instance of <see cref="T:Thinktecture.IO.IMemoryStream"/> to convert.</param>
+            <returns>An instance of <see cref="T:System.IO.MemoryStream"/>.</returns>
+        </member>
+        <member name="T:Thinktecture.StreamExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.Stream"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.StreamExtensions.ToInterface(System.IO.Stream)">
+            <summary>
+            Converts provided stream to <see cref="T:Thinktecture.IO.IStream"/>.
+            </summary>
+            <param name="stream">Stream to convert.</param>
+            <returns>Converted stream.</returns>
+        </member>
+        <member name="T:Thinktecture.StreamReaderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.StreamReader"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.StreamReaderExtensions.ToInterface(System.IO.StreamReader)">
+            <summary>
+            Converts provided reader to <see cref="T:Thinktecture.IO.IStreamReader"/>.
+            </summary>
+            <param name="reader">Reader to convert</param>
+            <returns>Converted reader.</returns>
+        </member>
+        <member name="M:Thinktecture.StreamReaderExtensions.ToImplementation(Thinktecture.IO.IStreamReader)">
+            <summary>
+            Converts provided <see cref="T:Thinktecture.IO.IStreamReader"/> info to <see cref="T:System.IO.StreamReader"/>.
+            </summary>
+            <param name="abstraction">Instance of <see cref="T:Thinktecture.IO.IStreamReader"/> to convert.</param>
+            <returns>An instance of <see cref="T:System.IO.StreamReader"/>.</returns>
+        </member>
+        <member name="T:Thinktecture.StreamWriterExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.StreamWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.StreamWriterExtensions.ToInterface(System.IO.StreamWriter)">
+            <summary>
+            Converts provided writer to <see cref="T:Thinktecture.IO.IStreamWriter"/>.
+            </summary>
+            <param name="writer">Writer to convert.</param>
+            <returns>Converted writer.</returns>
+        </member>
+        <member name="M:Thinktecture.StreamWriterExtensions.ToImplementation(Thinktecture.IO.IStreamWriter)">
+            <summary>
+            Converts provided <see cref="T:Thinktecture.IO.IStreamWriter"/> info to <see cref="T:System.IO.StreamWriter"/>.
+            </summary>
+            <param name="abstraction">Instance of <see cref="T:Thinktecture.IO.IStreamWriter"/> to convert.</param>
+            <returns>An instance of <see cref="T:System.IO.StreamWriter"/>.</returns>
+        </member>
+        <member name="T:Thinktecture.StringReaderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.StringReader"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.StringReaderExtensions.ToInterface(System.IO.StringReader)">
+            <summary>
+            Converts provided reader to <see cref="T:Thinktecture.IO.IStringReader"/>.
+            </summary>
+            <param name="reader">Reader to convert.</param>
+            <returns>Converted reader.</returns>
+        </member>
+        <member name="M:Thinktecture.StringReaderExtensions.ToImplementation(Thinktecture.IO.IStringReader)">
+            <summary>
+            Converts provided <see cref="T:Thinktecture.IO.IStringReader"/> info to <see cref="T:System.IO.StringReader"/>.
+            </summary>
+            <param name="abstraction">Instance of <see cref="T:Thinktecture.IO.IStringReader"/> to convert.</param>
+            <returns>An instance of <see cref="T:System.IO.StringReader"/>.</returns>
+        </member>
+        <member name="T:Thinktecture.StringWriterExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.StringWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.StringWriterExtensions.ToInterface(System.IO.StringWriter)">
+            <summary>
+            Converts provided writer to <see cref="T:Thinktecture.IO.IStringWriter"/>.
+            </summary>
+            <param name="writer">Writer to convert.</param>
+            <returns>Converted writer.</returns>
+        </member>
+        <member name="M:Thinktecture.StringWriterExtensions.ToImplementation(Thinktecture.IO.IStringWriter)">
+            <summary>
+            Converts provided <see cref="T:Thinktecture.IO.IStringWriter"/> info to <see cref="T:System.IO.StringWriter"/>.
+            </summary>
+            <param name="abstraction">Instance of <see cref="T:Thinktecture.IO.IStringWriter"/> to convert.</param>
+            <returns>An instance of <see cref="T:System.IO.StringWriter"/>.</returns>
+        </member>
+        <member name="T:Thinktecture.TextReaderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.TextReader"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.TextReaderExtensions.ToInterface(System.IO.TextReader)">
+            <summary>
+            Converts provided reader to <see cref="T:Thinktecture.IO.ITextReader"/>.
+            </summary>
+            <param name="reader">Reader to convert.</param>
+            <returns>Converted reader.</returns>
+        </member>
+        <member name="T:Thinktecture.TextWriterExtensions">
+            <summary>
+            Extensions for <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.TextWriterExtensions.ToInterface(System.IO.TextWriter)">
+            <summary>
+            Converts writer to <see cref="T:Thinktecture.IO.ITextWriter"/>.
+            </summary>
+            <param name="writer">Writer to convert.</param>
+            <returns>Converted writer.</returns>
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.BinaryReaderAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.BinaryReader"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.BinaryReaderAdapter.BaseStream">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(Thinktecture.IO.IStream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and using UTF-8 encoding.</summary>
+            <param name="input">The input stream. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.Stream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and using UTF-8 encoding.</summary>
+            <param name="input">The input stream. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="input">The input stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="input">The input stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="input">The input stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.Stream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="input">The input stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="input">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryReader" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> or <paramref name="input" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="input">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryReader" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> or <paramref name="input" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="input">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryReader" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> or <paramref name="input" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="input">The input stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryReader" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading, is null, or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="encoding" /> or <paramref name="input" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.#ctor(System.IO.BinaryReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryReaderAdapter" /> class.
+            </summary>
+            <param name="reader">Reader to use by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.PeekChar">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.Read">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.Read(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.Read(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadBoolean">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadByte">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadBytes(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadChar">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadChars(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadDecimal">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadDouble">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadInt16">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadInt32">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadInt64">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadSByte">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadSingle">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadString">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadUInt16">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadUInt32">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.ReadUInt64">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryReaderAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.BinaryWriterAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.BinaryWriter"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.BinaryWriterAdapter.Null">
+            <summary>Specifies a <see cref="T:System.IO.BinaryWriter" /> with no backing store.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.BinaryWriterAdapter.BaseStream">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(Thinktecture.IO.IStream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and using UTF-8 encoding.</summary>
+            <param name="output">The output stream. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.Stream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and using UTF-8 encoding.</summary>
+            <param name="output">The output stream. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="output">The output stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="output">The output stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="output">The output stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.Stream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding.</summary>
+            <param name="output">The output stream. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="output">The output stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="output">The output stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="output">The output stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class based on the specified stream and character encoding, and optionally leaves the stream open.</summary>
+            <param name="output">The output stream.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.BinaryWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentException">The stream does not support writing or is already closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="output" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.#ctor(System.IO.BinaryWriter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.BinaryWriterAdapter" /> class
+            </summary>
+            <param name="writer">Writer to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Flush">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Seek(System.Int32,System.IO.SeekOrigin)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Byte[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Decimal)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Int16)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.SByte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.UInt16)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Write(System.UInt64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.BinaryWriterAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.MemoryStreamAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.MemoryStream"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.MemoryStreamAdapter.Capacity">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class with an expandable capacity initialized to zero.</summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.Byte[])">
+            <summary>Initializes a new non-resizable instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class based on the specified byte array.</summary>
+            <param name="buffer">The array of unsigned bytes from which to create the current stream. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.Byte[],System.Boolean)">
+            <summary>Initializes a new non-resizable instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class based on the specified byte array with the <see cref="P:System.IO.MemoryStream.CanWrite" /> property set as specified.</summary>
+            <param name="buffer">The array of unsigned bytes from which to create this stream. </param>
+            <param name="writable">The setting of the <see cref="P:System.IO.MemoryStream.CanWrite" /> property, which determines whether the stream supports writing. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.Byte[],System.Int32,System.Int32)">
+            <summary>Initializes a new non-resizable instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class based on the specified region (index) of a byte array.</summary>
+            <param name="buffer">The array of unsigned bytes from which to create this stream. </param>
+            <param name="index">The index into <paramref name="buffer" /> at which the stream begins. </param>
+            <param name="count">The length of the stream in bytes. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+            <summary>Initializes a new non-resizable instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class based on the specified region of a byte array, with the <see cref="P:System.IO.MemoryStream.CanWrite" /> property set as specified.</summary>
+            <param name="buffer">The array of unsigned bytes from which to create this stream. </param>
+            <param name="index">The index in <paramref name="buffer" /> at which the stream begins. </param>
+            <param name="count">The length of the stream in bytes. </param>
+            <param name="writable">The setting of the <see cref="P:System.IO.MemoryStream.CanWrite" /> property, which determines whether the stream supports writing. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> are negative. </exception>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class with an expandable capacity initialized as specified.</summary>
+            <param name="capacity">The initial size of the internal array in bytes. </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="capacity" /> is negative. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.#ctor(System.IO.MemoryStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.MemoryStreamAdapter" /> class.
+            </summary>
+            <param name="stream">Stream to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.ToArray">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.WriteTo(Thinktecture.IO.IStream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.MemoryStreamAdapter.WriteTo(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.StreamAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.Stream"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.StreamAdapter.Null">
+            <summary>A Stream with no backing store.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.CanRead">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.CanSeek">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.CanTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.CanWrite">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.Length">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.Position">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.ReadTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamAdapter.WriteTimeout">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamAdapter" /> class.
+            </summary>
+            <param name="stream">Stream to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyTo(Thinktecture.IO.IStream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyTo(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyTo(Thinktecture.IO.IStream,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyTo(System.IO.Stream,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(Thinktecture.IO.IStream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(Thinktecture.IO.IStream,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(System.IO.Stream,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(Thinktecture.IO.IStream,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.Flush">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.FlushAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.FlushAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.Read(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.ReadAsync(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.ReadByte">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.Seek(System.Int64,System.IO.SeekOrigin)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.SetLength(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.Write(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.WriteAsync(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.WriteByte(System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.StreamReaderAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.StreamReader"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.StreamReaderAdapter.Null">
+            <summary>A <see cref="T:System.IO.StreamReader" /> object around an empty stream.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream.</summary>
+            <param name="stream">The stream to be read. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream.</summary>
+            <param name="stream">The stream to be read. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding and byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding and byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding and byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding and byte order mark detection option.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Boolean,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding, byte order mark detection option, and buffer size.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <param name="bufferSize">The minimum buffer size. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Boolean,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding, byte order mark detection option, and buffer size.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <param name="bufferSize">The minimum buffer size. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Boolean,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding, byte order mark detection option, and buffer size.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <param name="bufferSize">The minimum buffer size. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream, with the specified character encoding, byte order mark detection option, and buffer size.</summary>
+            <param name="stream">The stream to be read. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="detectEncodingFromByteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file. </param>
+            <param name="bufferSize">The minimum buffer size. </param>
+            <exception cref="T:System.ArgumentException">The stream does not support reading. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Boolean,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream based on the specified character encoding, byte order mark detection option, and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to read.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">true to look for byte order marks at the beginning of the file; otherwise, false.</param>
+            <param name="bufferSize">The minimum buffer size.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamReader" /> object is disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Boolean,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream based on the specified character encoding, byte order mark detection option, and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to read.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">true to look for byte order marks at the beginning of the file; otherwise, false.</param>
+            <param name="bufferSize">The minimum buffer size.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamReader" /> object is disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Boolean,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream based on the specified character encoding, byte order mark detection option, and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to read.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">true to look for byte order marks at the beginning of the file; otherwise, false.</param>
+            <param name="bufferSize">The minimum buffer size.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamReader" /> object is disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class for the specified stream based on the specified character encoding, byte order mark detection option, and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to read.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="detectEncodingFromByteOrderMarks">true to look for byte order marks at the beginning of the file; otherwise, false.</param>
+            <param name="bufferSize">The minimum buffer size.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamReader" /> object is disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.#ctor(System.IO.StreamReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamReaderAdapter" /> class.
+            </summary>
+            <param name="reader">Reader to be used by the adapter.</param>
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamReaderAdapter.BaseStream">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamReaderAdapter.CurrentEncoding">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamReaderAdapter.EndOfStream">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamReaderAdapter.DiscardBufferedData">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.StreamWriterAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.StreamWriter"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.StreamWriterAdapter.Null">
+            <summary>Provides a StreamWriter with no backing store that can be written to, but not read from.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using UTF-8 encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using UTF-8 encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,System.Text.Encoding)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and the default buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="bufferSize">The buffer size, in bytes. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="bufferSize">The buffer size, in bytes. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="bufferSize">The buffer size, in bytes. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size.</summary>
+            <param name="stream">The stream to write to. </param>
+            <param name="encoding">The character encoding to use. </param>
+            <param name="bufferSize">The buffer size, in bytes. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,Thinktecture.Text.IEncoding,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="bufferSize">The buffer size, in bytes.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,Thinktecture.Text.IEncoding,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="bufferSize">The buffer size, in bytes.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(Thinktecture.IO.IStream,System.Text.Encoding,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="bufferSize">The buffer size, in bytes.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class for the specified stream by using the specified encoding and buffer size, and optionally leaves the stream open.</summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="encoding">The character encoding to use.</param>
+            <param name="bufferSize">The buffer size, in bytes.</param>
+            <param name="leaveOpen">true to leave the stream open after the <see cref="T:System.IO.StreamWriter" /> object is disposed; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> or <paramref name="encoding" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="stream" /> is not writable. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StreamWriterAdapter.#ctor(System.IO.StreamWriter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StreamWriterAdapter" /> class.
+            </summary>
+            <param name="writer">Writer to be used by the adapter.</param>
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamWriterAdapter.AutoFlush">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.StreamWriterAdapter.BaseStream">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.StringReaderAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.StringReader"/>:
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringReaderAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringReaderAdapter.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringReaderAdapter" /> class that reads from the specified string.</summary>
+            <param name="s">The string to which the <see cref="T:System.IO.StringReader" /> should be initialized. </param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="s" /> parameter is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringReaderAdapter.#ctor(System.IO.StringReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringReaderAdapter" /> class.
+            </summary>
+            <param name="reader">Reader to be used by the adapter.</param>
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.StringWriterAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.StringWriter"/>.
+            </summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class.</summary>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(System.IFormatProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class with the specified format control.</summary>
+            <param name="formatProvider">An <see cref="T:System.IFormatProvider" /> object that controls formatting. </param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(Thinktecture.Text.IStringBuilder)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class that writes to the specified <see cref="T:System.Text.StringBuilder" />.</summary>
+            <param name="sb">The StringBuilder to write to. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="sb" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(System.Text.StringBuilder)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class that writes to the specified <see cref="T:System.Text.StringBuilder" />.</summary>
+            <param name="sb">The StringBuilder to write to. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="sb" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(Thinktecture.Text.IStringBuilder,System.IFormatProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class that writes to the specified <see cref="T:System.Text.StringBuilder" /> and has the specified format provider.</summary>
+            <param name="sb">The StringBuilder to write to. </param>
+            <param name="formatProvider">An <see cref="T:System.IFormatProvider" /> object that controls formatting. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="sb" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(System.Text.StringBuilder,System.IFormatProvider)">
+            <summary>Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class that writes to the specified <see cref="T:System.Text.StringBuilder" /> and has the specified format provider.</summary>
+            <param name="sb">The StringBuilder to write to. </param>
+            <param name="formatProvider">An <see cref="T:System.IFormatProvider" /> object that controls formatting. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="sb" /> is null. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.#ctor(System.IO.StringWriter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.StringWriterAdapter" /> class.
+            </summary>
+            <param name="writer">Writer to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.StringWriterAdapter.GetStringBuilder">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.TextReaderAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.TextReader"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.TextReaderAdapter.Null">
+            <summary>Provides a TextReader with no data to read from.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.#ctor(System.IO.TextReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Thinktecture.IO.Adapters.TextReaderAdapter" /> class.
+            </summary>
+            <param name="reader">Reader to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.Peek">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.Read">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.Read(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadAsync(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadBlock(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadBlockAsync(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadLine">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadLineAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadToEnd">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextReaderAdapter.ReadToEndAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.Adapters.TextWriterAdapter">
+            <summary>
+            Adapter for <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+        </member>
+        <member name="F:Thinktecture.IO.Adapters.TextWriterAdapter.Null">
+            <summary>Provides a TextWriter with no backing store that can be written to, but not read from.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.UnsafeConvert">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.#ctor(System.IO.TextWriter)">
+            <summary>
+            Creates an instance of <see cref="T:Thinktecture.IO.Adapters.TextWriterAdapter"/>.
+            </summary>
+            <param name="writer">write to be used by the adapter.</param>
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.TextWriterAdapter.Encoding">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.TextWriterAdapter.FormatProvider">
+            <inheritdoc />
+        </member>
+        <member name="P:Thinktecture.IO.Adapters.TextWriterAdapter.NewLine">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Flush">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.FlushAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Decimal)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.Write(System.UInt64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteAsync(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteAsync(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteAsync(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Decimal)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLine(System.UInt64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLineAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLineAsync(System.Char)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLineAsync(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLineAsync(System.Char[],System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Thinktecture.IO.Adapters.TextWriterAdapter.WriteLineAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Thinktecture.IO.IBinaryReader">
+            <summary>Reads primitive data types as binary values in a specific encoding.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IBinaryReader.BaseStream">
+            <summary>Exposes access to the underlying stream of the <see cref="T:System.IO.BinaryReader" />.</summary>
+            <returns>The underlying stream associated with the BinaryReader.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.PeekChar">
+            <summary>Returns the next available character and does not advance the byte or character position.</summary>
+            <returns>The next available character, or -1 if no more characters are available or the stream does not support seeking.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ArgumentException">The current character cannot be decoded into the internal character buffer by using the <see cref="T:System.Text.Encoding" /> selected for the stream.</exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.Read">
+            <summary>Reads characters from the underlying stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.</summary>
+            <returns>The next character from the input stream, or -1 if no characters are currently available.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>Reads the specified number of bytes from the stream, starting from a specified point in the byte array. </summary>
+            <returns>The number of bytes read into <paramref name="buffer" />. This might be less than the number of bytes requested if that many bytes are not available, or it might be zero if the end of the stream is reached.</returns>
+            <param name="buffer">The buffer to read data into. </param>
+            <param name="index">The starting point in the buffer at which to begin reading into the buffer. </param>
+            <param name="count">The number of bytes to read. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. -or-The number of decoded characters to read is greater than <paramref name="count" />. This can happen if a Unicode decoder returns fallback characters or a surrogate pair.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.Read(System.Char[],System.Int32,System.Int32)">
+            <summary>Reads the specified number of characters from the stream, starting from a specified point in the character array.</summary>
+            <returns>The total number of characters read into the buffer. This might be less than the number of characters requested if that many characters are not currently available, or it might be zero if the end of the stream is reached.</returns>
+            <param name="buffer">The buffer to read data into. </param>
+            <param name="index">The starting point in the buffer at which to begin reading into the buffer. </param>
+            <param name="count">The number of characters to read. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. -or-The number of decoded characters to read is greater than <paramref name="count" />. This can happen if a Unicode decoder returns fallback characters or a surrogate pair.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadBoolean">
+            <summary>Reads a Boolean value from the current stream and advances the current position of the stream by one byte.</summary>
+            <returns>true if the byte is nonzero; otherwise, false.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadByte">
+            <summary>Reads the next byte from the current stream and advances the current position of the stream by one byte.</summary>
+            <returns>The next byte read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadBytes(System.Int32)">
+            <summary>Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.</summary>
+            <returns>A byte array containing data read from the underlying stream. This might be less than the number of bytes requested if the end of the stream is reached.</returns>
+            <param name="count">The number of bytes to read. This value must be 0 or a non-negative number or an exception will occur.</param>
+            <exception cref="T:System.ArgumentException">The number of decoded characters to read is greater than <paramref name="count" />. This can happen if a Unicode decoder returns fallback characters or a surrogate pair.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="count" /> is negative. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadChar">
+            <summary>Reads the next character from the current stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.</summary>
+            <returns>A character read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ArgumentException">A surrogate character was read. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadChars(System.Int32)">
+            <summary>Reads the specified number of characters from the current stream, returns the data in a character array, and advances the current position in accordance with the Encoding used and the specific character being read from the stream.</summary>
+            <returns>A character array containing data read from the underlying stream. This might be less than the number of characters requested if the end of the stream is reached.</returns>
+            <param name="count">The number of characters to read. </param>
+            <exception cref="T:System.ArgumentException">The number of decoded characters to read is greater than <paramref name="count" />. This can happen if a Unicode decoder returns fallback characters or a surrogate pair.</exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="count" /> is negative. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadDecimal">
+            <summary>Reads a decimal value from the current stream and advances the current position of the stream by sixteen bytes.</summary>
+            <returns>A decimal value read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadDouble">
+            <summary>Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.</summary>
+            <returns>An 8-byte floating point value read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadInt16">
+            <summary>Reads a 2-byte signed integer from the current stream and advances the current position of the stream by two bytes.</summary>
+            <returns>A 2-byte signed integer read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadInt32">
+            <summary>Reads a 4-byte signed integer from the current stream and advances the current position of the stream by four bytes.</summary>
+            <returns>A 4-byte signed integer read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadInt64">
+            <summary>Reads an 8-byte signed integer from the current stream and advances the current position of the stream by eight bytes.</summary>
+            <returns>An 8-byte signed integer read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadSByte">
+            <summary>Reads a signed byte from this stream and advances the current position of the stream by one byte.</summary>
+            <returns>A signed byte read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadSingle">
+            <summary>Reads a 4-byte floating point value from the current stream and advances the current position of the stream by four bytes.</summary>
+            <returns>A 4-byte floating point value read from the current stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadString">
+            <summary>Reads a string from the current stream. The string is prefixed with the length, encoded as an integer seven bits at a time.</summary>
+            <returns>The string being read.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadUInt16">
+            <summary>Reads a 2-byte unsigned integer from the current stream using little-endian encoding and advances the position of the stream by two bytes.</summary>
+            <returns>A 2-byte unsigned integer read from this stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadUInt32">
+            <summary>Reads a 4-byte unsigned integer from the current stream and advances the position of the stream by four bytes.</summary>
+            <returns>A 4-byte unsigned integer read from this stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryReader.ReadUInt64">
+            <summary>Reads an 8-byte unsigned integer from the current stream and advances the position of the stream by eight bytes.</summary>
+            <returns>An 8-byte unsigned integer read from this stream.</returns>
+            <exception cref="T:System.IO.EndOfStreamException">The end of the stream is reached. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IBinaryWriter">
+            <summary>Writes primitive types in binary to a stream and supports writing strings in a specific encoding.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IBinaryWriter.BaseStream">
+            <summary>Gets the underlying stream of the <see cref="T:System.IO.BinaryWriter" />.</summary>
+            <returns>The underlying stream associated with the BinaryWriter.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Flush">
+            <summary>Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Seek(System.Int32,System.IO.SeekOrigin)">
+            <summary>Sets the position within the current stream.</summary>
+            <returns>The position with the current stream.</returns>
+            <param name="offset">A byte offset relative to <paramref name="origin" />. </param>
+            <param name="origin">A field of <see cref="T:System.IO.SeekOrigin" /> indicating the reference point from which the new position is to be obtained. </param>
+            <exception cref="T:System.IO.IOException">The file pointer was moved to an invalid location. </exception>
+            <exception cref="T:System.ArgumentException">The <see cref="T:System.IO.SeekOrigin" /> value is invalid. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Boolean)">
+            <summary>Writes a one-byte Boolean value to the current stream, with 0 representing false and 1 representing true.</summary>
+            <param name="value">The Boolean value to write (0 or 1). </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Byte)">
+            <summary>Writes an unsigned byte to the current stream and advances the stream position by one byte.</summary>
+            <param name="value">The unsigned byte to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Byte[])">
+            <summary>Writes a byte array to the underlying stream.</summary>
+            <param name="buffer">A byte array containing the data to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>Writes a region of a byte array to the current stream.</summary>
+            <param name="buffer">A byte array containing the data to write. </param>
+            <param name="index">The starting point in <paramref name="buffer" /> at which to begin writing. </param>
+            <param name="count">The number of bytes to write. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Char)">
+            <summary>Writes a Unicode character to the current stream and advances the current position of the stream in accordance with the Encoding used and the specific characters being written to the stream.</summary>
+            <param name="ch">The non-surrogate, Unicode character to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="ch" /> is a single surrogate character.</exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Char[])">
+            <summary>Writes a character array to the current stream and advances the current position of the stream in accordance with the Encoding used and the specific characters being written to the stream.</summary>
+            <param name="chars">A character array containing the data to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="chars" /> is null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes a section of a character array to the current stream, and advances the current position of the stream in accordance with the Encoding used and perhaps the specific characters being written to the stream.</summary>
+            <param name="chars">A character array containing the data to write. </param>
+            <param name="index">The starting point in <paramref name="chars" /> from which to begin writing. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="chars" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Decimal)">
+            <summary>Writes a decimal value to the current stream and advances the stream position by sixteen bytes.</summary>
+            <param name="value">The decimal value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Double)">
+            <summary>Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.</summary>
+            <param name="value">The eight-byte floating-point value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Int16)">
+            <summary>Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.</summary>
+            <param name="value">The two-byte signed integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Int32)">
+            <summary>Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.</summary>
+            <param name="value">The four-byte signed integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Int64)">
+            <summary>Writes an eight-byte signed integer to the current stream and advances the stream position by eight bytes.</summary>
+            <param name="value">The eight-byte signed integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.SByte)">
+            <summary>Writes a signed byte to the current stream and advances the stream position by one byte.</summary>
+            <param name="value">The signed byte to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.Single)">
+            <summary>Writes a four-byte floating-point value to the current stream and advances the stream position by four bytes.</summary>
+            <param name="value">The four-byte floating-point value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.String)">
+            <summary>Writes a length-prefixed string to this stream in the current encoding of the <see cref="T:System.IO.BinaryWriter" />, and advances the current position of the stream in accordance with the encoding used and the specific characters being written to the stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="value" /> is null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.UInt16)">
+            <summary>Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.</summary>
+            <param name="value">The two-byte unsigned integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.UInt32)">
+            <summary>Writes a four-byte unsigned integer to the current stream and advances the stream position by four bytes.</summary>
+            <param name="value">The four-byte unsigned integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IBinaryWriter.Write(System.UInt64)">
+            <summary>Writes an eight-byte unsigned integer to the current stream and advances the stream position by eight bytes.</summary>
+            <param name="value">The eight-byte unsigned integer to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IMemoryStream">
+            <summary>Creates a stream whose backing store is memory.To browse the .NET Framework source code for this type, see the Reference Source.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IMemoryStream.Capacity">
+            <summary>Gets or sets the number of bytes allocated for this stream.</summary>
+            <returns>The length of the usable portion of the buffer for the stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">A capacity is set that is negative or less than the current length of the stream. </exception>
+            <exception cref="T:System.ObjectDisposedException">The current stream is closed. </exception>
+            <exception cref="T:System.NotSupportedException">set is invoked on a stream whose capacity cannot be modified. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IMemoryStream.ToArray">
+            <summary>Writes the stream contents to a byte array, regardless of the <see cref="P:System.IO.MemoryStream.Position" /> property.</summary>
+            <returns>A new byte array.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IMemoryStream.WriteTo(Thinktecture.IO.IStream)">
+            <summary>Writes the entire contents of this memory stream to another stream.</summary>
+            <param name="stream">The stream to write this memory stream to. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The current or target stream is closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IMemoryStream.WriteTo(System.IO.Stream)">
+            <summary>Writes the entire contents of this memory stream to another stream.</summary>
+            <param name="stream">The stream to write this memory stream to. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream" /> is null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The current or target stream is closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IStream">
+            <summary>
+            Provides a generic view of a sequence of bytes. This is an abstract class.To browse the .NET Framework source code for this type, see the Reference Source.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.CanRead">
+            <summary>Gets a value indicating whether the current stream supports reading.</summary>
+            <returns>true if the stream supports reading; otherwise, false.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.CanSeek">
+            <summary>Gets a value indicating whether the current stream supports seeking.</summary>
+            <returns>true if the stream supports seeking; otherwise, false.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.CanTimeout">
+            <summary>Gets a value that determines whether the current stream can time out.</summary>
+            <returns>A value that determines whether the current stream can time out.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.CanWrite">
+            <summary>Gets a value indicating whether the current stream supports writing.</summary>
+            <returns>true if the stream supports writing; otherwise, false.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.Length">
+            <summary>Gets the length in bytes of the stream.</summary>
+            <returns>A long value representing the length of the stream in bytes.</returns>
+            <exception cref="T:System.NotSupportedException">A class derived from Stream does not support seeking. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.Position">
+            <summary>Gets or sets the current position of this stream.</summary>
+            <returns>The current position within the stream.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support seeking. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Attempted to set the position to a negative value. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.ReadTimeout">
+            <summary>Gets or sets a value, in miliseconds, that determines how long the stream will attempt to read before timing out. </summary>
+            <returns>A value, in miliseconds, that determines how long the stream will attempt to read before timing out.</returns>
+            <exception cref="T:System.InvalidOperationException">The <see cref="P:System.IO.Stream.ReadTimeout" /> method always throws an <see cref="T:System.InvalidOperationException" />. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStream.WriteTimeout">
+            <summary>Gets or sets a value, in miliseconds, that determines how long the stream will attempt to write before timing out. </summary>
+            <returns>A value, in miliseconds, that determines how long the stream will attempt to write before timing out.</returns>
+            <exception cref="T:System.InvalidOperationException">The <see cref="P:System.IO.Stream.WriteTimeout" /> method always throws an <see cref="T:System.InvalidOperationException" />. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyTo(Thinktecture.IO.IStream)">
+            <summary>Reads the bytes from the current stream and writes them to another stream.</summary>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading.-or-<paramref name="destination" /> does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or <paramref name="destination" /> were closed before the <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> method was called.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyTo(System.IO.Stream)">
+            <summary>Reads the bytes from the current stream and writes them to another stream.</summary>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading.-or-<paramref name="destination" /> does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or <paramref name="destination" /> were closed before the <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> method was called.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyTo(Thinktecture.IO.IStream,System.Int32)">
+            <summary>Reads the bytes from the current stream and writes them to another stream, using a specified buffer size.</summary>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading.-or-<paramref name="destination" /> does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or <paramref name="destination" /> were closed before the <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> method was called.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyTo(System.IO.Stream,System.Int32)">
+            <summary>Reads the bytes from the current stream and writes them to another stream, using a specified buffer size.</summary>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading.-or-<paramref name="destination" /> does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or <paramref name="destination" /> were closed before the <see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" /> method was called.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(Thinktecture.IO.IStream)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(System.IO.Stream)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(Thinktecture.IO.IStream,System.Int32)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream, using a specified buffer size.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(System.IO.Stream,System.Int32)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream, using a specified buffer size.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(Thinktecture.IO.IStream,System.Int32,System.Threading.CancellationToken)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream, using a specified buffer size and cancellation token.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)">
+            <summary>Asynchronously reads the bytes from the current stream and writes them to another stream, using a specified buffer size and cancellation token.</summary>
+            <returns>A task that represents the asynchronous copy operation.</returns>
+            <param name="destination">The stream to which the contents of the current stream will be copied.</param>
+            <param name="bufferSize">The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="destination" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is negative or zero.</exception>
+            <exception cref="T:System.ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
+            <exception cref="T:System.NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.Flush">
+            <summary>Clears all buffers for this stream and causes any buffered data to be written to the underlying device.</summary>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The stream is closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.FlushAsync">
+            <summary>Asynchronously clears all buffers for this stream and causes any buffered data to be written to the underlying device.</summary>
+            <returns>A task that represents the asynchronous flush operation.</returns>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.FlushAsync(System.Threading.CancellationToken)">
+            <summary>Asynchronously clears all buffers for this stream, causes any buffered data to be written to the underlying device, and monitors cancellation requests. </summary>
+            <returns>A task that represents the asynchronous flush operation. </returns>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>Reads a block of bytes from the stream and writes the data in a given buffer.</summary>
+            <returns>The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.</returns>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between <paramref name="offset" /> and (<paramref name="offset" /> + <paramref name="count" /> - 1) replaced by the bytes read from the current source. </param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> at which to begin storing the data read from the current stream. </param>
+            <param name="count">The maximum number of bytes to be read from the current stream. </param>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is larger than the buffer length. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support reading. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.ReadAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>Asynchronously reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.</summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached. </returns>
+            <param name="buffer">The buffer to write the data into.</param>
+            <param name="offset">The byte offset in <paramref name="buffer" /> at which to begin writing data from the stream.</param>
+            <param name="count">The maximum number of bytes to read.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support reading.</exception>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The stream is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>Asynchronously reads a sequence of bytes from the current stream, advances the position within the stream by the number of bytes read, and monitors cancellation requests.</summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached. </returns>
+            <param name="buffer">The buffer to write the data into.</param>
+            <param name="offset">The byte offset in <paramref name="buffer" /> at which to begin writing data from the stream.</param>
+            <param name="count">The maximum number of bytes to read.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support reading.</exception>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The stream is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.ReadByte">
+            <summary>Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.</summary>
+            <returns>The unsigned byte cast to an Int32, or -1 if at the end of the stream.</returns>
+            <exception cref="T:System.NotSupportedException">The stream does not support reading. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>Sets the current position of this stream to the given value.</summary>
+            <returns>The new position within the current stream.</returns>
+            <param name="offset">A byte offset relative to the <paramref name="origin" /> parameter. </param>
+            <param name="origin">A value of type <see cref="T:System.IO.SeekOrigin" /> indicating the reference point used to obtain the new position. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support seeking, such as if the stream is constructed from a pipe or console output. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.SetLength(System.Int64)">
+            <summary>Sets the length of this stream to the given value.</summary>
+            <param name="value">The desired length of the current stream in bytes. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support both writing and seeking, such as if the stream is constructed from a pipe or console output. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>Writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.</summary>
+            <param name="buffer">An array of bytes. This method copies <paramref name="count" /> bytes from <paramref name="buffer" /> to the current stream. </param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> at which to begin copying bytes to the current stream. </param>
+            <param name="count">The number of bytes to be written to the current stream. </param>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is greater than the buffer length.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" />  is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occured, such as the specified file cannot be found.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">
+            <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" /> was called after the stream was closed.</exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.WriteAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>Asynchronously writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The buffer to write data from.</param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> from which to begin copying bytes to the stream.</param>
+            <param name="count">The maximum number of bytes to write.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The stream is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The buffer to write data from.</param>
+            <param name="offset">The zero-based byte offset in <paramref name="buffer" /> from which to begin copying bytes to the stream.</param>
+            <param name="count">The maximum number of bytes to write.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="offset" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="offset" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing.</exception>
+            <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The stream is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.IStream.WriteByte(System.Byte)">
+            <summary>Writes a byte to the current position in the stream and advances the position within the stream by one byte.</summary>
+            <param name="value">The byte to write to the stream. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support writing, or the stream is already closed. </exception>
+            <exception cref="T:System.ObjectDisposedException">Methods were called after the stream was closed. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IStreamReader">
+            <summary>
+            Implements a <see cref="T:System.IO.TextReader" /> that reads characters from a byte stream in a particular encoding.To browse the .NET Framework source code for this type, see the Reference Source.
+            </summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStreamReader.BaseStream">
+            <summary>Returns the underlying stream.</summary>
+            <returns>The underlying stream.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStreamReader.CurrentEncoding">
+            <summary>Gets the current character encoding that the current <see cref="T:System.IO.StreamReader" /> object is using.</summary>
+            <returns>The current character encoding used by the current reader. The value can be different after the first call to any <see cref="M:Thinktecture.IO.ITextReader.Read" /> method of <see cref="T:System.IO.StreamReader" />, since encoding autodetection is not done until the first call to a <see cref="M:Thinktecture.IO.ITextReader.Read" /> method.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStreamReader.EndOfStream">
+            <summary>Gets a value that indicates whether the current stream position is at the end of the stream.</summary>
+            <returns>true if the current stream position is at the end of the stream; otherwise false.</returns>
+            <exception cref="T:System.ObjectDisposedException">The underlying stream has been disposed.</exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStreamReader.DiscardBufferedData">
+            <summary>Clears the internal buffer.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IStreamWriter">
+            <summary>
+            Implements a <see cref="T:System.IO.TextWriter" /> for writing characters to a stream in a particular encoding.To browse the .NET Framework source code for this type, see the Reference Source.
+            </summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStreamWriter.AutoFlush">
+            <summary>Gets or sets a value indicating whether the <see cref="T:System.IO.StreamWriter" /> will flush its buffer to the underlying stream after every call to <see cref="M:System.IO.StreamWriter.Write(System.Char)" />.</summary>
+            <returns>true to force <see cref="T:System.IO.StreamWriter" /> to flush its buffer; otherwise, false.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.IStreamWriter.BaseStream">
+            <summary>Gets the underlying stream that interfaces with a backing store.</summary>
+            <returns>The stream this StreamWriter is writing to.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IStringReader">
+            <summary>Implements a <see cref="T:System.IO.TextReader" /> that reads from a string.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.IStringWriter">
+            <summary>Implements a <see cref="T:System.IO.TextWriter" /> for writing information to a string. The information is stored in an underlying <see cref="T:System.Text.StringBuilder" />.</summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.IStringWriter.GetStringBuilder">
+            <summary>Returns the underlying <see cref="T:System.Text.StringBuilder" />.</summary>
+            <returns>The underlying StringBuilder.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:Thinktecture.IO.ITextReader">
+            <summary>
+            Represents a reader that can read a sequential series of characters.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.Peek">
+            <summary>Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the reader.</summary>
+            <returns>An integer representing the next character to be read, or -1 if no more characters are available or the reader does not support seeking.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.Read">
+            <summary>Reads the next character from the text reader and advances the character position by one character.</summary>
+            <returns>The next character from the text reader, or -1 if no more characters are available. The default implementation returns -1.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.Read(System.Char[],System.Int32,System.Int32)">
+            <summary>Reads a specified maximum number of characters from the current reader and writes the data to a buffer, beginning at the specified index.</summary>
+            <returns>The number of characters that have been read. The number will be less than or equal to <paramref name="count" />, depending on whether the data is available within the reader. This method returns 0 (zero) if it is called when no more characters are left to read.</returns>
+            <param name="buffer">When this method returns, contains the specified character array with the values between <paramref name="index" /> and (<paramref name="index" /> + <paramref name="count" /> - 1) replaced by the characters read from the current source. </param>
+            <param name="index">The position in <paramref name="buffer" /> at which to begin writing. </param>
+            <param name="count">The maximum number of characters to read. If the end of the reader is reached before the specified number of characters is read into the buffer, the method returns. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadAsync(System.Char[],System.Int32,System.Int32)">
+            <summary>Reads a specified maximum number of characters from the current text reader asynchronously and writes the data to a buffer, beginning at the specified index. </summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the text has been reached.</returns>
+            <param name="buffer">When this method returns, contains the specified character array with the values between <paramref name="index" /> and (<paramref name="index" /> + <paramref name="count" /> - 1) replaced by the characters read from the current source.</param>
+            <param name="index">The position in <paramref name="buffer" /> at which to begin writing.</param>
+            <param name="count">The maximum number of characters to read. If the end of the text is reached before the specified number of characters is read into the buffer, the current method returns.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="index" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadBlock(System.Char[],System.Int32,System.Int32)">
+            <summary>Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.</summary>
+            <returns>The number of characters that have been read. The number will be less than or equal to <paramref name="count" />, depending on whether all input characters have been read.</returns>
+            <param name="buffer">When this method returns, this parameter contains the specified character array with the values between <paramref name="index" /> and (<paramref name="index" /> + <paramref name="count" /> -1) replaced by the characters read from the current source. </param>
+            <param name="index">The position in <paramref name="buffer" /> at which to begin writing.</param>
+            <param name="count">The maximum number of characters to read. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null. </exception>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadBlockAsync(System.Char[],System.Int32,System.Int32)">
+            <summary>Reads a specified maximum number of characters from the current text reader asynchronously and writes the data to a buffer, beginning at the specified index.</summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the text has been reached.</returns>
+            <param name="buffer">When this method returns, contains the specified character array with the values between <paramref name="index" /> and (<paramref name="index" /> + <paramref name="count" /> - 1) replaced by the characters read from the current source.</param>
+            <param name="index">The position in <paramref name="buffer" /> at which to begin writing.</param>
+            <param name="count">The maximum number of characters to read. If the end of the text is reached before the specified number of characters is read into the buffer, the current method returns.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ArgumentException">The sum of <paramref name="index" /> and <paramref name="count" /> is larger than the buffer length.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadLine">
+            <summary>Reads a line of characters from the text reader and returns the data as a string.</summary>
+            <returns>The next line from the reader, or null if all characters have been read.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.OutOfMemoryException">There is insufficient memory to allocate a buffer for the returned string. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line is larger than <see cref="F:System.Int32.MaxValue" /></exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadLineAsync">
+            <summary>Reads a line of characters asynchronously and returns the data as a string. </summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the next line from the text reader, or is null if all of the characters have been read. </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line is larger than <see cref="F:System.Int32.MaxValue" />.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadToEnd">
+            <summary>Reads all characters from the current position to the end of the text reader and returns them as one string.</summary>
+            <returns>A string that contains all characters from the current position to the end of the text reader.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextReader" /> is closed. </exception>
+            <exception cref="T:System.OutOfMemoryException">There is insufficient memory to allocate a buffer for the returned string. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line is larger than <see cref="F:System.Int32.MaxValue" /></exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextReader.ReadToEndAsync">
+            <summary>Reads all characters from the current position to the end of the text reader asynchronously and returns them as one string.</summary>
+            <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains a string with the characters from the current position to the end of the text reader. </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters is larger than <see cref="F:System.Int32.MaxValue" />.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation. </exception>
+        </member>
+        <member name="T:Thinktecture.IO.ITextWriter">
+            <summary>
+            Represents a writer that can write a sequential series of characters. This class is abstract.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.ITextWriter.Encoding">
+            <summary>When overridden in a derived class, returns the character encoding in which the output is written.</summary>
+            <returns>The character encoding in which the output is written.</returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.ITextWriter.FormatProvider">
+            <summary>Gets an object that controls formatting.</summary>
+            <returns>An <see cref="T:System.IFormatProvider" /> object for a specific culture, or the formatting of the current culture if no other culture is specified.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Thinktecture.IO.ITextWriter.NewLine">
+            <summary>Gets or sets the line terminator string used by the current TextWriter.</summary>
+            <returns>The line terminator string for the current TextWriter.</returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Flush">
+            <summary>Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.</summary>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.FlushAsync">
+            <summary>Asynchronously clears all buffers for the current writer and causes any buffered data to be written to the underlying device. </summary>
+            <returns>A task that represents the asynchronous flush operation. </returns>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Boolean)">
+            <summary>Writes the text representation of a Boolean value to the text string or stream.</summary>
+            <param name="value">The Boolean value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Char)">
+            <summary>Writes a character to the text string or stream.</summary>
+            <param name="value">The character to write to the text stream. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Char[])">
+            <summary>Writes a character array to the text string or stream.</summary>
+            <param name="buffer">The character array to write to the text stream. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes a subarray of characters to the text string or stream.</summary>
+            <param name="buffer">The character array to write data from. </param>
+            <param name="index">The character position in the buffer at which to start retrieving data. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="buffer" /> parameter is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Decimal)">
+            <summary>Writes the text representation of a decimal value to the text string or stream.</summary>
+            <param name="value">The decimal value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Double)">
+            <summary>Writes the text representation of an 8-byte floating-point value to the text string or stream.</summary>
+            <param name="value">The 8-byte floating-point value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Int32)">
+            <summary>Writes the text representation of a 4-byte signed integer to the text string or stream.</summary>
+            <param name="value">The 4-byte signed integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Int64)">
+            <summary>Writes the text representation of an 8-byte signed integer to the text string or stream.</summary>
+            <param name="value">The 8-byte signed integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Object)">
+            <summary>Writes the text representation of an object to the text string or stream by calling the ToString method on that object.</summary>
+            <param name="value">The object to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.Single)">
+            <summary>Writes the text representation of a 4-byte floating-point value to the text string or stream.</summary>
+            <param name="value">The 4-byte floating-point value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.String)">
+            <summary>Writes a string to the text string or stream.</summary>
+            <param name="value">The string to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.String,System.Object[])">
+            <summary>Writes a formatted string to the text string or stream, using the same semantics as the <see cref="M:System.String.Format(System.String,System.Object[])" /> method.</summary>
+            <param name="format">A composite format string (see Remarks). </param>
+            <param name="arg">An object array that contains zero or more objects to format and write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="format" /> or <paramref name="arg" /> is null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.FormatException">
+            <paramref name="format" /> is not a valid composite format string.-or- The index of a format item is less than 0 (zero), or greater than or equal to the length of the <paramref name="arg" /> array. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.UInt32)">
+            <summary>Writes the text representation of a 4-byte unsigned integer to the text string or stream.</summary>
+            <param name="value">The 4-byte unsigned integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.Write(System.UInt64)">
+            <summary>Writes the text representation of an 8-byte unsigned integer to the text string or stream.</summary>
+            <param name="value">The 8-byte unsigned integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteAsync(System.Char)">
+            <summary>Writes a character to the text string or stream asynchronously.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="value">The character to write to the text stream.</param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteAsync(System.Char[])">
+            <summary>Writes a character array to the text string or stream asynchronously.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The character array to write to the text stream. If <paramref name="buffer" /> is null, nothing is written.</param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteAsync(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes a subarray of characters to the text string or stream asynchronously. </summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The character array to write data from. </param>
+            <param name="index">The character position in the buffer at which to start retrieving data. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentException">The <paramref name="index" /> plus <paramref name="count" /> is greater than the buffer length.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteAsync(System.String)">
+            <summary>Writes a string to the text string or stream asynchronously.</summary>
+            <returns>A task that represents the asynchronous write operation. </returns>
+            <param name="value">The string to write. If <paramref name="value" /> is null, nothing is written to the text stream.</param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine">
+            <summary>Writes a line terminator to the text string or stream.</summary>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Boolean)">
+            <summary>Writes the text representation of a Boolean value followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The Boolean value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Char)">
+            <summary>Writes a character followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The character to write to the text stream. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Char[])">
+            <summary>Writes an array of characters followed by a line terminator to the text string or stream.</summary>
+            <param name="buffer">The character array from which data is read. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes a subarray of characters followed by a line terminator to the text string or stream.</summary>
+            <param name="buffer">The character array from which data is read. </param>
+            <param name="index">The character position in <paramref name="buffer" /> at which to start reading data. </param>
+            <param name="count">The maximum number of characters to write. </param>
+            <exception cref="T:System.ArgumentException">The buffer length minus <paramref name="index" /> is less than <paramref name="count" />. </exception>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="buffer" /> parameter is null. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Decimal)">
+            <summary>Writes the text representation of a decimal value followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The decimal value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Double)">
+            <summary>Writes the text representation of a 8-byte floating-point value followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 8-byte floating-point value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Int32)">
+            <summary>Writes the text representation of a 4-byte signed integer followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 4-byte signed integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Int64)">
+            <summary>Writes the text representation of an 8-byte signed integer followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 8-byte signed integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Object)">
+            <summary>Writes the text representation of an object by calling the ToString method on that object, followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The object to write. If <paramref name="value" /> is null, only the line terminator is written. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.Single)">
+            <summary>Writes the text representation of a 4-byte floating-point value followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 4-byte floating-point value to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.String)">
+            <summary>Writes a string followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The string to write. If <paramref name="value" /> is null, only the line terminator is written. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.String,System.Object[])">
+            <summary>Writes out a formatted string and a new line, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)" />.</summary>
+            <param name="format">A composite format string (see Remarks).</param>
+            <param name="arg">An object array that contains zero or more objects to format and write. </param>
+            <exception cref="T:System.ArgumentNullException">A string or object is passed in as null. </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <exception cref="T:System.FormatException">
+            <paramref name="format" /> is not a valid composite format string.-or- The index of a format item is less than 0 (zero), or greater than or equal to the length of the <paramref name="arg" /> array. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.UInt32)">
+            <summary>Writes the text representation of a 4-byte unsigned integer followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 4-byte unsigned integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLine(System.UInt64)">
+            <summary>Writes the text representation of an 8-byte unsigned integer followed by a line terminator to the text string or stream.</summary>
+            <param name="value">The 8-byte unsigned integer to write. </param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.IO.TextWriter" /> is closed. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurs. </exception>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLineAsync">
+            <summary>Writes a line terminator asynchronously to the text string or stream.</summary>
+            <returns>A task that represents the asynchronous write operation. </returns>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLineAsync(System.Char)">
+            <summary>Writes a character followed by a line terminator asynchronously to the text string or stream.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="value">The character to write to the text stream.</param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLineAsync(System.Char[])">
+            <summary>Writes an array of characters followed by a line terminator asynchronously to the text string or stream.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The character array to write to the text stream. If the character array is null, only the line terminator is written. </param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLineAsync(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes a subarray of characters followed by a line terminator asynchronously to the text string or stream.</summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="buffer">The character array to write data from. </param>
+            <param name="index">The character position in the buffer at which to start retrieving data. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is null.</exception>
+            <exception cref="T:System.ArgumentException">The <paramref name="index" /> plus <paramref name="count" /> is greater than the buffer length.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is negative.</exception>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+        <member name="M:Thinktecture.IO.ITextWriter.WriteLineAsync(System.String)">
+            <summary>Writes a string followed by a line terminator asynchronously to the text string or stream. </summary>
+            <returns>A task that represents the asynchronous write operation.</returns>
+            <param name="value">The string to write. If the value is null, only a line terminator is written. </param>
+            <exception cref="T:System.ObjectDisposedException">The text writer is disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">The text writer is currently in use by a previous write operation. </exception>
+        </member>
+    </members>
+</doc>

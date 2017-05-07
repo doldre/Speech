@@ -176,3 +176,11 @@ C:\Users\82557\Documents\GitHub\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechE
 C:\Users\82557\Documents\GitHub\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.dll
 C:\Users\82557\Documents\GitHub\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.pdb
 C:\Users\82557\Documents\GitHub\Speech\SpeechExcel\SpeechExcel\bin\Debug\SpeechClient.dll
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Abstractions.dll
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.IO.Abstractions.dll
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Runtime.Abstractions.dll
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Text.Encoding.Abstractions.dll
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Abstractions.xml
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.IO.Abstractions.xml
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Runtime.Abstractions.xml
+C:\Users\kornb\Desktop\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Text.Encoding.Abstractions.xml

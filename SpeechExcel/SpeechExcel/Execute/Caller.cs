@@ -37,13 +37,17 @@ namespace SpeechExcel.Execute
         {
             try
             {
-                return intentExe[res.Intents[0].Name](res, replace_list);
+                if (res.Intents[0].Name == "None" || res.Intents[0].Score <= 0.6)
+                {
+                    return Properties.Resources.unkown;
+                }
+                string mss = intentExe[res.Intents[0].Name](res, replace_list);
+                return "你的意图：" + res.Intents[0].Name + "\n" + mss;
             }
             catch
             {
-                return "Cannot Parse this Intent: " + res.Intents[0].Name;
+                return Properties.Resources.bug;
             }
-
         }
     }
 }
