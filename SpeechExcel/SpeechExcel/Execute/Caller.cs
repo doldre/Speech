@@ -38,7 +38,7 @@ namespace SpeechExcel.Execute
         {
             try
             {
-                if (res.Intents[0].Name == "None" || res.Intents[0].Score <= 0.6)
+                if (res.Intents[0].Name == "None" || res.Intents[0].Score <= 0.5)
                 {
                     return Properties.Resources.unkown;
                 }
