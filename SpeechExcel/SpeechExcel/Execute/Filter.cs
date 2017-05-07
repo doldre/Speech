@@ -155,11 +155,12 @@ namespace SpeechExcel.Execute
                     {
                         string s = cell.content;
                         typeName.Add(s);
-                    }
-                    if (cell.Row == 1)
-                    {
                         column = cell.Column;
                     }
+                    //if (cell.Row == 1)
+                    //{
+                    //    column = cell.Column;
+                    //}
                 }
                 if (column == 0)
                 {
