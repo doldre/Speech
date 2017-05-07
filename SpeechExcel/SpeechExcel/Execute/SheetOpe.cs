@@ -243,6 +243,34 @@ namespace SpeechExcel.Execute
             return ((Excel.Range)dataRange.Cells[row_id, column_id]).Text.ToString();
         }
 
+
+        public static String get_sum(LuisResult res, List<Parser.ReplaceNode> replace_list)
+        {
+            String ret = "";
+            if (replace_list.Count == 3)
+            {
+                replace_list.RemoveAt(0);
+            }
+            Excel.Worksheet worksheet = Globals.ThisAddIn.Application.ActiveSheet as Excel.Worksheet;
+            Excel.Range dataRange = worksheet.UsedRange;
+            Excel.Range rng = dataRange;
+            if (replace_list.Count == 2)
+            {
+                HashSet<String> types = new HashSet<string>();
+                types.Add(replace_list[0].content);
+                int column_id = replace_list[0].Column;
+                rng = Filter.TypeFilter(column_id, types);
+                replace_list.RemoveAt(0);
+            }
+            if(replace_list.Count == 1)
+            {
+                int column_id = replace_list[0].Column;
+                rng = (Excel.Range)dataRange.Columns[column_id];
+                ret = Globals.ThisAddIn.Application.WorksheetFunction.Subtotal(109, rng).ToString();
+            }
+            return ret;
+        }
+
         public static string sort(LuisResult res, List<Parser.ReplaceNode> replace_list)
         {
             Excel.Worksheet worksheet = Globals.ThisAddIn.Application.ActiveSheet as Excel.Worksheet;
@@ -359,6 +387,7 @@ namespace SpeechExcel.Execute
                     // max
                     t = Globals.ThisAddIn.Application.WorksheetFunction.Max(dataRange.Columns[column_id]);
                 }
+                //MessageBox.Show(((Excel.Range)dataRange[2, column_id]).GetType().ToString());
 
                 return t.ToString();
 
