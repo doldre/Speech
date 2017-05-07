@@ -251,7 +251,9 @@ namespace SpeechExcel.Execute
             {
                 replace_list.RemoveAt(0);
             }
-            Excel.Range rng = null;
+            Excel.Worksheet worksheet = Globals.ThisAddIn.Application.ActiveSheet as Excel.Worksheet;
+            Excel.Range dataRange = worksheet.UsedRange;
+            Excel.Range rng = dataRange;
             if (replace_list.Count == 2)
             {
                 HashSet<String> types = new HashSet<string>();
@@ -263,7 +265,7 @@ namespace SpeechExcel.Execute
             if(replace_list.Count == 1)
             {
                 int column_id = replace_list[0].Column;
-                rng = rng.Columns[column_id];
+                rng = (Excel.Range)rng.Columns[column_id];
                 ret = Globals.ThisAddIn.Application.WorksheetFunction.Subtotal(109, rng).ToString();
             }
             return ret;

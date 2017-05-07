@@ -25,7 +25,8 @@ namespace SpeechExcel.Execute
                 { "Filter", Filter.filter },
                 { "CancelFilter", Filter.cancelFilter },
                 { "OriChart", OrdinaryChart.CreateChart },
-                { "Analysis", Other.UseTemplate }
+                { "Analysis", Other.UseTemplate },
+                { "Get_Sum", SheetOpe.get_sum }
             };
         
         /// <summary>
