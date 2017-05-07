@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpeechExcel"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="White" Margin="0,0,0,34">
-        <Ellipse x:Name="_startbutton_wrap" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid Background="White">
+        <Ellipse x:Name="_startbutton_wrap" Width="100" Height="100" HorizontalAlignment="Center" Opacity="0.5">
             <Ellipse.Fill>
                 <SolidColorBrush x:Name="parentBrush" Color="#FF7CB9F7"></SolidColorBrush>
             </Ellipse.Fill>
@@ -26,7 +26,7 @@
             </Ellipse.Triggers>
         </Ellipse>
         <Button x:Name="_startbutton" FontFamily="微软雅黑" FontWeight="Bold" FontSize="20" 
-                Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="90" Height="90" Click="StartButton_Click" Content="{Binding ButtonStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,0" Width="90" Height="90" Click="StartButton_Click" Content="{Binding ButtonStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="ButtonBorder" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="45">
@@ -71,7 +71,7 @@
             </Button.Style>
         </Button>
         <!--<TextBlock x:Name="textBlock" FontFamily="微软雅黑" FontSize="14" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="60,330,30,0" TextWrapping="Wrap" Text="Click the Start button, then speak what you want..." VerticalAlignment="Top"/>-->
-        <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="0,450,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" VerticalAlignment="Top"/>
-        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" Margin="0,530,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" VerticalAlignment="Top" />
+        <TextBlock x:Name="_speakResult" FontFamily="微软雅黑" FontSize="16" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="{Binding SpeakPartialContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250" />
+        <TextBlock x:Name="_message" FontFamily="微软雅黑" FontSize="18" Foreground="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" Text="{Binding MessageShow, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" MaxWidth="250"/>
     </Grid>
 </UserControl>
