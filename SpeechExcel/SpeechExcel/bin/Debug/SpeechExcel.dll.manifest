@@ -14,16 +14,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
+          UAC 清单选项
+         若想要更改 Windows 用户帐户控制级别，请
+         将 requestedExecutionLevel 节点替换为下述某项。
 
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
+        若想要使用文件和注册表虚拟化以实现向后
+        兼容，请删除 requestedExecutionLevel 节点。
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -478,14 +478,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SpeechClient.dll" size="841888">
-      <assemblyIdentity name="SpeechClient" version="0.0.0.0" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SpeechClient.dll" size="640160">
+      <assemblyIdentity name="SpeechClient" version="0.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ep+112LFziPu8Kp6lMPf1HBIdUKdkafyyD4sCXrsxMc=</dsig:DigestValue>
+        <dsig:DigestValue>7gGQi9/VI27wNPCv8u7rDWZYHcDKeQw+2gMmFd1IQoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -497,17 +497,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HPFXs2f1PrvvHfkN1KJWOVEEVZ9xeRCN0ZzqMRVhtSM=</dsig:DigestValue>
+        <dsig:DigestValue>bOLJf0Q2WCiLWFx1YqxIu/AGdwN1kyKgXmIZl09d1cs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="SpeechExcel.dll.config" size="1447">
+  <file name="SpeechExcel.dll.config" size="1418">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>K+AeSOpuMlxKHTDDRFRczE5h+twmszMCpsPtD8YY0J8=</dsig:DigestValue>
+      <dsig:DigestValue>rpbvexiLfKGsU0nlzkAlAn7oBFgxAeTpsN2AEpTgx5I=</dsig:DigestValue>
     </hash>
   </file>
   <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
@@ -533,4 +533,4 @@
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=ANDREW-WORKSTAT\Andrew" issuerKeyHash="8896e646421e2b404156850bbc574c4b1abbe9a9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>79oEJQ1s0xRW5KVzqaVs2rakzz9PIxkxYOKaIaF+7jE=</DigestValue></Reference></SignedInfo><SignatureValue>kXN27NVtWDtd7RW5i51x6FmJjcIOPz3YCel/VPJl0HTHbIb1r1uMOkXdvBeBZzc0qIYkAoWoKi12lLhdvare3UMAtloy0gbHgh4QXEuEUj+GRYIJN/InKyPbeV7rHOT3gcj3hF2FFgFxkXybAYoVcUvPn30XojZOI41O/jpa7Z4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qUBQ9/OUclaagdw9sAqgFUzH9etqhPf01BzPIipPlSL0SeYpL0hHNnMFwsfUIvPOAHJDGNGJxtpKIQLJzRrQClTc22ORh/Pni0LReKxax+n/tzeVIHOHJ3y63nAsPtnCMV3kBbDHXZYCuWVGWg353UIn4xb3GnQkDZzNwFcbpHk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="31ee7ea1219ae2603119234f3fcfa4b6da6ca5a973a5e45614d36c0d2504daef" Description="" Url=""><as:assemblyIdentity name="SpeechExcel.dll" version="1.0.0.0" publicKeyToken="b710bebe6ab96529" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ANDREW-WORKSTAT\Andrew</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ESRILsgY1szmJvZVP4+a7ndTzmLYmvO5m38P/1/5k/0=</DigestValue></Reference></SignedInfo><SignatureValue>XnFHw90B33cHwNSDUrfUCeoGxjjzZLMH4SzWokMJpl7W9Wq+ZlHldpHXryl+NgZ/ehgesTHdO5BPocoMymu9kR7TqcAkPx/e2Le54OGCaatBASTBN26k1IIeWBqqVYkXSUhMctq9S9pjMIo4FP+isMlzomDN0VYx/fbR7pXpjMU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qUBQ9/OUclaagdw9sAqgFUzH9etqhPf01BzPIipPlSL0SeYpL0hHNnMFwsfUIvPOAHJDGNGJxtpKIQLJzRrQClTc22ORh/Pni0LReKxax+n/tzeVIHOHJ3y63nAsPtnCMV3kBbDHXZYCuWVGWg353UIn4xb3GnQkDZzNwFcbpHk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQOU2yhHW4W7BL7F0jzsnqyzANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwAQQBOAEQAUgBFAFcALQBXAE8AUgBLAFMAVABBAFQAXABBAG4AZAByAGUAdzAeFw0xNzA0MjcwOTA0NTlaFw0xODA0MjcxNTA0NTlaMDcxNTAzBgNVBAMeLABBAE4ARABSAEUAVwAtAFcATwBSAEsAUwBUAEEAVABcAEEAbgBkAHIAZQB3MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpQFD385RyVpqB3D2wCqAVTMf162qE9/TUHM8iKk+VIvRJ5ikvSEc2cwXCx9Qi884AckMY0YnG2kohAsnNGtAKVNzbY5GH8+eLQtF4rFrH6f+3N5Ugc4cnfLrecCw+2cIxXeQFsMddlgK5ZUZaDfndQifjFvcadCQNnM3AVxukeQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBABvVtctt68Fo8dhA6Aki3uMpUaZ6Fnl9+CtNDQUL5ysHqypusLIeKmKZHErRPJaSCPfziWeygP1yOnz8dtxrxjuakof+NqkuLq5E3nWSrjohvTzbZCXn8hQt5alim4E8wWhm/ZaR1YD2hv6bLYaSSTo2l9VrurftMlhQd/rn+U7J</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=ANDREW-WORKSTAT\Andrew" issuerKeyHash="8896e646421e2b404156850bbc574c4b1abbe9a9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>leg+Nj92xZfrAHmrkBnlDdIooVY/VkvubMCIKn7TEeg=</DigestValue></Reference></SignedInfo><SignatureValue>Ur1igg6DIkqpkHZd+5/IKQZNyZjMeBRqzeaKDH4Eli5p/igi0a2tw/6u/WiGh4nLkSOe+nbawfb/QTxO83Yb/jxRH21HLCHFQ31Kk91qygxOK10BaOxpsLSQRIh9W8k+XQBy2v0EgLNOKFf8TCGPo4wWxmDNmwdFvAJfIPfZ4Rk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qUBQ9/OUclaagdw9sAqgFUzH9etqhPf01BzPIipPlSL0SeYpL0hHNnMFwsfUIvPOAHJDGNGJxtpKIQLJzRrQClTc22ORh/Pni0LReKxax+n/tzeVIHOHJ3y63nAsPtnCMV3kBbDHXZYCuWVGWg353UIn4xb3GnQkDZzNwFcbpHk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e811d37e2a88c06cee4b563f56a128d20de51990ab7900eb97c5763f363ee895" Description="" Url=""><as:assemblyIdentity name="SpeechExcel.dll" version="1.0.0.0" publicKeyToken="b710bebe6ab96529" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ANDREW-WORKSTAT\Andrew</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>KbBVHN3FCFfd/TceMJYMnxCFDsRVcxr8iGpM9Q5OHJg=</DigestValue></Reference></SignedInfo><SignatureValue>RdiuXI/kWXPw9A+26xmstENxUuPaR7Ml2oiUnzXyKS8x2h5CkLVqKcbbFjfYUvxjw8wC7o7K74pahLqxY2CA0P0JEeSqB3Sm9fVeTmPIk7yu+wAGjnWMRp39uO50rSmO5iEA3YnmXQ5vRYthyQ31DwPxFeBp2N24nGeYK+geW30=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qUBQ9/OUclaagdw9sAqgFUzH9etqhPf01BzPIipPlSL0SeYpL0hHNnMFwsfUIvPOAHJDGNGJxtpKIQLJzRrQClTc22ORh/Pni0LReKxax+n/tzeVIHOHJ3y63nAsPtnCMV3kBbDHXZYCuWVGWg353UIn4xb3GnQkDZzNwFcbpHk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQOU2yhHW4W7BL7F0jzsnqyzANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwAQQBOAEQAUgBFAFcALQBXAE8AUgBLAFMAVABBAFQAXABBAG4AZAByAGUAdzAeFw0xNzA0MjcwOTA0NTlaFw0xODA0MjcxNTA0NTlaMDcxNTAzBgNVBAMeLABBAE4ARABSAEUAVwAtAFcATwBSAEsAUwBUAEEAVABcAEEAbgBkAHIAZQB3MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpQFD385RyVpqB3D2wCqAVTMf162qE9/TUHM8iKk+VIvRJ5ikvSEc2cwXCx9Qi884AckMY0YnG2kohAsnNGtAKVNzbY5GH8+eLQtF4rFrH6f+3N5Ugc4cnfLrecCw+2cIxXeQFsMddlgK5ZUZaDfndQifjFvcadCQNnM3AVxukeQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBABvVtctt68Fo8dhA6Aki3uMpUaZ6Fnl9+CtNDQUL5ysHqypusLIeKmKZHErRPJaSCPfziWeygP1yOnz8dtxrxjuakof+NqkuLq5E3nWSrjohvTzbZCXn8hQt5alim4E8wWhm/ZaR1YD2hv6bLYaSSTo2l9VrurftMlhQd/rn+U7J</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

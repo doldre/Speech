@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Windows;
 using Microsoft.Cognitive.LUIS;
 
 namespace SpeechExcel.Execute
@@ -23,9 +22,10 @@ namespace SpeechExcel.Execute
                 { "Find_Min_Max", SheetOpe.find_min_max },
                 { "Get_Value", SheetOpe.get_value },
                 { "Sort", SheetOpe.sort },
-                { "Filter",Filter.filter },
-                { "CancelFilter",Filter.cancelFilter },
-                { "OriChart", OrdinaryChart.CreateChart }
+                { "Filter", Filter.filter },
+                { "CancelFilter", Filter.cancelFilter },
+                { "OriChart", OrdinaryChart.CreateChart },
+                { "Analysis", Other.UseTemplate }
             };
         
         /// <summary>

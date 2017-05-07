@@ -70,7 +70,7 @@ namespace SpeechExcel.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Please speak your order... 的本地化字符串。
+        ///   查找类似 有何吩咐？ 的本地化字符串。
         /// </summary>
         internal static string tips {
             get {
