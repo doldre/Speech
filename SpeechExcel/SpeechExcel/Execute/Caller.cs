@@ -38,12 +38,13 @@ namespace SpeechExcel.Execute
         {
             try
             {
-                if (res.Intents[0].Name == "None" || res.Intents[0].Score <= 0.6)
+                if (res.Intents[0].Name == "None" || res.Intents[0].Score <= 0.5)
                 {
                     return Properties.Resources.unkown;
                 }
                 string mss = intentExe[res.Intents[0].Name](res, replace_list);
-                return "你的意图：" + res.Intents[0].Name + "\n" + mss;
+                //return "你的意图：" + res.Intents[0].Name + "\n" + mss;
+                return mss;
             }
             catch
             {
