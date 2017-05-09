@@ -23,11 +23,6 @@ namespace SpeechExcel
         private string subscriptionKey;
 
         /// <summary>
-        /// 数据识别region client
-        /// </summary>
-        private DataRecognitionClient dataClient;
-
-        /// <summary>
         /// 麦克风客户端
         /// </summary>
         private MicrophoneRecognitionClient micClient;
@@ -159,7 +154,7 @@ namespace SpeechExcel
             set
             {
                 this.processAnima.Visibility = value;
-                //this.OnPropertyChanged<Visibility>("ProcessStatus");
+                this.OnPropertyChanged<Visibility>("ProcessStatus");
             }
         }
 
@@ -476,6 +471,7 @@ namespace SpeechExcel
 
             }
             this.WriteResponseResult(e);
+            ButtonStatus = "CLICK";
         }
 
         /// <summary>
