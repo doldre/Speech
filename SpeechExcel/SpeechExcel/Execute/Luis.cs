@@ -35,9 +35,10 @@ namespace SpeechExcel.Execute
             }
             finally
             {
+                LuisClient client = null;
                 try
                 {
-                    LuisClient client = new LuisClient(LuisAppId, LuisSubscriptionID);
+                    client = new LuisClient(LuisAppId, LuisSubscriptionID);
                     LuisResult res = await client.Predict(replaced_text);
                     UI.MessageShow = processRes(res, replace_list);
                 }
@@ -47,6 +48,7 @@ namespace SpeechExcel.Execute
                 }
                 finally
                 {
+                    if (null != client) client.Dispose();
                     UI.done = true;
                     UI.ProcessStatus = Visibility.Hidden;
                 }
