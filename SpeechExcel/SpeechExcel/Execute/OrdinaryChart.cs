@@ -14,7 +14,8 @@ namespace SpeechExcel.Execute
         {
             { "3Dcolumn", Excel.XlChartType.xlColumnClustered },
             { "pie", Excel.XlChartType.xlPie },
-            { "line", Excel.XlChartType.xlLineMarkers }
+            { "line", Excel.XlChartType.xlLineMarkers },
+            { "pivot", Excel.XlChartType.xl3DArea }
         };
 
         /// <summary>
@@ -25,8 +26,9 @@ namespace SpeechExcel.Execute
         public static string CreateChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             mess = "";
-            Excel.XlChartType chartType = Excel.XlChartType.xlColumnStacked;
+            Excel.XlChartType chartType = Excel.XlChartType.xlColumnClustered;
             string rangeBlock = "", selectType = "column";
+            bool status = false;
             // 使用[col]和[col]的数据绘制成（[charType]）
             foreach (Entity item in res.GetAllEntities())
             {
@@ -39,9 +41,11 @@ namespace SpeechExcel.Execute
                 else if (item.Name.Contains("chartype"))
                 {
                     chartType = chartMap[item.Name.Split(':')[2]];  // substract the chart type
+                    status = true;
                 }
             }
             // 如果绘制的是透视图，调用pivot中的OriChart接口
+            if (!status) return "请指定你需要绘制的图表类型";
             if (chartType == chartMap["pivot"])
             {
                 List<int> idx = new List<int>();
@@ -63,7 +67,7 @@ namespace SpeechExcel.Execute
                     if (cell.Row != 1)// 如果不是行号不是1，说明这是一个筛选过程
                     {
                         // transfer to row
-                        char nameRow = (char)(48 + cell.Row);
+                        string nameRow = cell.Row.ToString();
                         rangeBlock += nameRow + ":" + nameRow + ",";
                     }
                     else if (cell.Row == 1)//如果行号是1，说明这是一个列

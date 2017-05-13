@@ -23,11 +23,6 @@ namespace SpeechExcel
         private string subscriptionKey;
 
         /// <summary>
-        /// 数据识别region client
-        /// </summary>
-        private DataRecognitionClient dataClient;
-
-        /// <summary>
         /// 麦克风客户端
         /// </summary>
         private MicrophoneRecognitionClient micClient;
@@ -159,7 +154,7 @@ namespace SpeechExcel
             set
             {
                 this.processAnima.Visibility = value;
-                //this.OnPropertyChanged<Visibility>("ProcessStatus");
+                this.OnPropertyChanged<Visibility>("ProcessStatus");
             }
         }
 
@@ -320,6 +315,8 @@ namespace SpeechExcel
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             // 禁用按钮，防止事件冲突
+            if (!done) return;
+            done = false;
             this._startbutton.IsEnabled = false;
             this.MessageShow = "";
             ButtonStatus = "WAIT";
@@ -416,12 +413,13 @@ namespace SpeechExcel
                 this.micClient.EndMicAndRecognition();
                 this.WriteResponseResult(e);
                 _startbutton.IsEnabled = true;
-                if (!done) return;
-                done = false;
+                //if (!done) return;
+                //done = false;
                 if (e.PhraseResponse.RecognitionStatus == RecognitionStatus.InitialSilenceTimeout)
                 {
                     //this.SpeakPartialContent = Properties.Resources.detect_warning;
                     this.MessageShow = Properties.Resources.detect_warning;
+                    done = true;
                 }
                 else
                 {
@@ -476,6 +474,7 @@ namespace SpeechExcel
 
             }
             this.WriteResponseResult(e);
+            ButtonStatus = "CLICK";
         }
 
         /// <summary>

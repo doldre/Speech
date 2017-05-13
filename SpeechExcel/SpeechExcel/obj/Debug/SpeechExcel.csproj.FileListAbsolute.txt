@@ -100,7 +100,6 @@ D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.dll
 D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OOXML.dll
 D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OpenXml4Net.dll
 D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.OpenXmlFormats.dll
-D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\SpeechClient.dll
 D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Newtonsoft.Json.xml
 D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\NPOI.xml
 D:\Github\Speech\SpeechExcel\SpeechExcel\obj\Debug\SpeechExcel.csprojResolveAssemblyReference.cache
@@ -192,3 +191,11 @@ C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\bin\Debug\Think
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.IO.Abstractions.xml
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Runtime.Abstractions.xml
 C:\Users\scuacm\Desktop\workspace\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Text.Encoding.Abstractions.xml
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Abstractions.dll
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.IO.Abstractions.dll
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Runtime.Abstractions.dll
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Text.Encoding.Abstractions.dll
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Abstractions.xml
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.IO.Abstractions.xml
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Runtime.Abstractions.xml
+D:\Github\Speech\SpeechExcel\SpeechExcel\bin\Debug\Thinktecture.Text.Encoding.Abstractions.xml

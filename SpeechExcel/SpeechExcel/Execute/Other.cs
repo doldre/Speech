@@ -123,7 +123,7 @@ namespace SpeechExcel.Execute
             headingBar.RowHeight = height;
             headingBar.Font.Size = fontSize;
             headingBar.Font.FontStyle = "Microsoft YaHei UI";
-            //headingBar.Select();
+            headingBar.Select();
             headingBar.FormulaR1C1 = headingText;
         }
 
