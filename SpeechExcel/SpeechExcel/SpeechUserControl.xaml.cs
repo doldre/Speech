@@ -419,6 +419,7 @@ namespace SpeechExcel
                 {
                     //this.SpeakPartialContent = Properties.Resources.detect_warning;
                     this.MessageShow = Properties.Resources.detect_warning;
+                    done = true;
                 }
                 else
                 {
