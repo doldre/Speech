@@ -26,12 +26,13 @@ namespace SpeechExcel.Execute
         public static string CreateChart(LuisResult res, List<Parser.ReplaceNode> dataList)
         {
             mess = "";
-            Excel.XlChartType chartType = Excel.XlChartType.xlColumnClustered;
-            string rangeBlock = "", selectType = "column";
-            bool status = false;
+            Excel.XlChartType chartType = Excel.XlChartType.xlColumnClustered;  // 默认的图形样式是柱形图
+            string rangeBlock = "", selectType = "column";  // 使用的筛选方式：x:x,y:y
+            bool status = false;    // 标志是否指定图形样式
             // 使用[col]和[col]的数据绘制成（[charType]）
             foreach (Entity item in res.GetAllEntities())
             {
+                // 检查是否有明确指定某列
                 if (item.Name == "builtin.ordinal")
                 {
                     int col = Parser._toInt(item.Value.Substring(1));
@@ -44,8 +45,9 @@ namespace SpeechExcel.Execute
                     status = true;
                 }
             }
-            // 如果绘制的是透视图，调用pivot中的OriChart接口
+            
             if (!status) return "请指定你需要绘制的图表类型";
+            // 如果绘制的是透视图，调用pivot中的OriChart接口
             if (chartType == chartMap["pivot"])
             {
                 List<int> idx = new List<int>();
@@ -59,7 +61,7 @@ namespace SpeechExcel.Execute
                 }
                 mess = Pivot.OriInterFace(idx, chartType);
             }
-            else if (rangeBlock == "") // 如果没有找到列，那么使用datalist给出的列
+            else
             {
                 selectType = "row";
                 foreach (var cell in dataList)
@@ -117,7 +119,6 @@ namespace SpeechExcel.Execute
         /// <param name="chartType">plot-chart type</param>
         private static void createChart(string selectType, string rangeBlock, Excel.XlChartType chartType)
         {
-
             Boolean oldFresh = Globals.ThisAddIn.Application.ScreenUpdating;
             Excel.XlRowCol plotby = Excel.XlRowCol.xlRows;
 
