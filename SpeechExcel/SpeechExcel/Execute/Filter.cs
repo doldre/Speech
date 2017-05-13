@@ -10,6 +10,24 @@ namespace SpeechExcel.Execute
     class Filter
     {
         /// <summary>
+        /// 复制rng  的东西添加到新页面里
+        /// </summary>
+        /// <param name="rng"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static Excel.Worksheet CreateSheet(Excel.Range rng,string name = null)
+        {
+            Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook as Excel.Workbook;
+            rng.Copy();
+        Excel.Worksheet ws = wb.Sheets.Add()as Excel.Worksheet;
+            ws.Select();
+            ws.Paste();
+            if (name != null)
+                ws.Name = name;
+            return ws;
+        }
+
+       /// <summary>
         /// 取消筛选（显示原图）
         /// </summary>
         /// <param name="entities"></param>
@@ -34,6 +52,7 @@ namespace SpeechExcel.Execute
             List<string> operate = new List<string>();
             bool valueFilter = false;
             bool logicOr = false;
+            bool new_sheet = false;
             foreach (var item in res.GetAllEntities())
             {
                 if (item.Name == "FilterOperator::greater_equal")
@@ -68,6 +87,9 @@ namespace SpeechExcel.Execute
                 else if (item.Name == "logic::or")
                 {
                     logicOr = true;
+                }else if (item.Name == "new_sheet")
+                {
+                    new_sheet = true;
                 }
             }
             if (valueFilter)
@@ -139,7 +161,14 @@ namespace SpeechExcel.Execute
                     }
                     //OperateFilter(column, operate + valueWord);
                     if (operate.Count == valueWord.Count)
-                        OperateFilter(column, logicOr, operateArray[0], operateArray[1]);
+                    {
+                        Excel.Range rng = OperateFilter(column, logicOr, operateArray[0], operateArray[1]);
+                        if (new_sheet)
+                        {
+                            Filter.CreateSheet(rng);
+                        }
+                    }
+                        
                     else
                         errorMessage = "我不太懂你的意思";
                 }
@@ -179,7 +208,16 @@ namespace SpeechExcel.Execute
                 }
                 else
                 {
-                    TypeFilter(column, typeName);
+                    Excel.Range rng = TypeFilter(column, typeName);
+                    if (new_sheet)
+                    {
+                        string name = "";
+                        foreach(string n in typeName)
+                        {
+                            name += n;
+                        }
+                        Filter.CreateSheet(rng, name);
+                    }
                 }
             }
             return errorMessage;
@@ -284,5 +322,28 @@ namespace SpeechExcel.Execute
 
             }
         }
+
+        /// <summary>
+        /// 创建筛选的内容sheet
+        /// </summary>
+        /// <param name="column">列id</param>
+        /// <param name="typeName">筛选的内容</param>
+        public static void CreateFilterSheet(int column, HashSet<string> typeName)
+        {
+            Excel.Range rng = TypeFilter(column, typeName);
+            rng.Copy();
+            Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            Excel.Worksheet new_ws = wb.Sheets.Add() as Excel.Worksheet;
+            new_ws.Select();
+            new_ws.Paste();
+            string name = "";
+            foreach (string n in typeName)
+            {
+                name += n;
+            }
+            new_ws.Name = name;
+            //MessageBox.Show(new_ws.Name);
+        }
+
     }
 }
