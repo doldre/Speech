@@ -148,6 +148,7 @@ namespace SpeechExcel.Execute
             {
                 int column = 0;
                 HashSet<string> typeName = new HashSet<string>();
+                HashSet<int> columnList = new HashSet<int>();
                 //int column = parseColumnName(res.OriginalQuery, typeName);
                 foreach (var cell in replace_list)
                 {
@@ -156,6 +157,7 @@ namespace SpeechExcel.Execute
                         string s = cell.content;
                         typeName.Add(s);
                         column = cell.Column;
+                        columnList.Add(cell.Column);
                     }
                     //if (cell.Row == 1)
                     //{
@@ -171,6 +173,9 @@ namespace SpeechExcel.Execute
                 {
                     //MessageBox.Show("找不到要筛选的类别");
                     errorMessage = "找不到要筛选的类别";
+                }else if (columnList.Count > 1)
+                {
+                    errorMessage = "筛选的对象在多个列中出现。麻烦筛选的时候说一下是哪一列。";
                 }
                 else
                 {
