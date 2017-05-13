@@ -15,7 +15,8 @@ namespace SpeechExcel.Execute
             { "3Dcolumn", Excel.XlChartType.xlColumnClustered },
             { "pie", Excel.XlChartType.xlPie },
             { "line", Excel.XlChartType.xlLineMarkers },
-            { "pivot", Excel.XlChartType.xl3DArea }
+            { "pivot", Excel.XlChartType.xl3DArea },
+            { "distributed", Excel.XlChartType.xlArea }
         };
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace SpeechExcel.Execute
             
             if (!status) return "请指定你需要绘制的图表类型";
             // 如果绘制的是透视图，调用pivot中的OriChart接口
-            if (chartType == chartMap["pivot"])
+            if (chartType == chartMap["pivot"] || chartType == chartMap["distributed"])
             {
                 List<int> idx = new List<int>();
                 foreach (var cell in dataList)

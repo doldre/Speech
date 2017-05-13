@@ -128,7 +128,8 @@ namespace SpeechExcel.Execute
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = false;
                 createPivot(charType);
-                addColumns(idx);
+                if (charType == Excel.XlChartType.xlArea) addColumns(idx, true);
+                else addColumns(idx);
             }
             catch
             {
@@ -156,6 +157,8 @@ namespace SpeechExcel.Execute
             newSheet.Select();
             newSheet.Shapes.AddChart2(201, charType).Select();
             workbook.ActiveChart.SetSourceData(Source: newSheet.UsedRange);
+            newSheet.Shapes.Item(1).ScaleWidth(1.4f, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoScaleFrom.msoScaleFromTopLeft);
+            newSheet.Shapes.Item(1).ScaleHeight(1.6f, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoScaleFrom.msoScaleFromTopLeft);
             // draw pivot chart
             Globals.ThisAddIn.Application.ActiveWorkbook.ShowPivotChartActiveFields = true;
         }
@@ -164,30 +167,46 @@ namespace SpeechExcel.Execute
         /// Add columns to chart and table
         /// </summary>
         /// <param name="colIdxes">列的序列号集合</param>
-        public static void addColumns(List<int> colIdxes)
+        public static void addColumns(List<int> colIdxes, bool group=false)
         {
             if (colIdxes.Count == 0) return;
-            Globals.ThisAddIn.Application.ScreenUpdating = false;
             Excel.PivotTable table1 = Globals.ThisAddIn.Application.ActiveChart.PivotLayout.PivotTable; // get current pivot table (active)
-            // Create and populate the PivotTable.
-            Excel.PivotField customerField =
-                (Excel.PivotField)table1.PivotFields(colIdxes[0]);
-            customerField.Orientation =
-                Excel.XlPivotFieldOrientation.xlRowField;
-            customerField.Position = 1;
+                                                                                                        // Create and populate the PivotTable.
 
-            int count = colIdxes.Count;
-            for (int i = 1; i < count; i++)
+            if (group)
             {
-                table1.AddDataField(table1.PivotFields(colIdxes[i]),
-                    Type.Missing, Excel.XlConsolidationFunction.xlSum);
+                // the seconde column should be parsed as row
+                table1.AddDataField(table1.PivotFields(colIdxes[0]),
+                    Type.Missing, Excel.XlConsolidationFunction.xlCount);
+                Excel.PivotField customerField = null;
+                if (colIdxes.Count >= 2) customerField = (Excel.PivotField)table1.PivotFields(colIdxes[1]);
+                else customerField = (Excel.PivotField)table1.PivotFields(colIdxes[0]);
+                customerField.Orientation =
+                        Excel.XlPivotFieldOrientation.xlRowField;
+                customerField.Position = 1;
+                Excel.Range rng = customerField.DataRange.Cells[1] as Excel.Range;
+                rng.Group(true, true, 15);
             }
-            if (count > 3)
+            else
             {
-                table1.DataPivotField.Orientation = Excel.XlPivotFieldOrientation.xlColumnField;
-                table1.DataPivotField.Position = 1;
+                Excel.PivotField customerField =
+                    (Excel.PivotField)table1.PivotFields(colIdxes[0]);
+                customerField.Orientation =
+                    Excel.XlPivotFieldOrientation.xlRowField;
+                customerField.Position = 1;
+
+                int count = colIdxes.Count;
+                for (int i = 1; i < count; i++)
+                {
+                    table1.AddDataField(table1.PivotFields(colIdxes[i]),
+                        Type.Missing, Excel.XlConsolidationFunction.xlSum);
+                }
+                if (count > 3)
+                {
+                    table1.DataPivotField.Orientation = Excel.XlPivotFieldOrientation.xlColumnField;
+                    table1.DataPivotField.Position = 1;
+                }
             }
-            
         }
     }
 }
